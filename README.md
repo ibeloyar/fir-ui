@@ -1,15 +1,5 @@
-fir-ui
+# Vue 3 + TypeScript + Vite
 
-Which branch should be used for bringing forth production releases?
-   - main
-Branch name for production releases: [main] main  
-Branch name for "next release" development: [develop] dev
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-How to name your supporting branch prefixes?
-Feature branches? [feature/] 
-Bugfix branches? [bugfix/] 
-Release branches? [release/] 
-Hotfix branches? [hotfix/] 
-Support branches? [support/] 
-Version tag prefix? [] 
-Hooks and filters directory? [/home/beloyar/temp/open/fir-ui/.git/hooks] 
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
