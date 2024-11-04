@@ -10,7 +10,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     label: { control: 'text', description: 'Button label', type: 'string' },
-    type: { control: 'select', options: ['filled', 'outlined', 'clear'], type: 'string' }
+    type: { control: 'select', options: ['filled', 'outline', 'clear'], type: 'string' },
+    size: { control: 'select', options: ['small', 'medium', 'large'], type: 'string' },
   },
   args: {
     onClick: fn(),
@@ -20,9 +21,10 @@ const meta = {
 
 export default meta;
 
-export const Primary = {
+export const Filled = {
   args: {
     label: 'Storybook',
     type: 'filled',
+    size: 'medium',
   },
 };

@@ -92,4 +92,12 @@
 
     /* Other */
     --fir-global-duration: .2s;
+
+    /* Button */
+    --fir-button-font-size-small: 12px;
+    --fir-button-font-size-medium: 16px;
+    --fir-button-font-size-large: 20px;
+    --fir-button-padding-small: 2px 4px;
+    --fir-button-padding-medium: 4px 8px;
+    --fir-button-padding-large: 8px 12px;
 }
