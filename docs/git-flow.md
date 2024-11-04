@@ -8,4 +8,4 @@ Bugfix branches: bugfix/<br/>
 Release branches: release/<br/>
 Hotfix branches: hotfix/<br/>
 Support branches: support/<br/>
-Hooks and filters directory /home/beloyar/temp/open/fir-ui/.git/hooks
+Hooks and filters directory /fir-ui/.git/hooks
