@@ -1,3 +1,3 @@
-import '../../src/main.css';
+import '../../src/styles/main.css';
 
 export const StyleDecorator = () => ({ template: '<story />' });

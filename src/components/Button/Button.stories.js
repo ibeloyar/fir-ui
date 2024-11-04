@@ -1,9 +1,8 @@
 import { fn } from '@storybook/test';
-import type { Meta, StoryObj } from '@storybook/vue3';
 
 import Button from './Button.vue';
 
-import { StyleDecorator } from '../../.storybook/decorators/style.decorator';
+import { StyleDecorator } from '../../../.storybook/decorators/style.decorator.js';
 
 const meta = {
   title: 'Example/Button',
@@ -17,12 +16,11 @@ const meta = {
     onClick: fn(),
   },
   decorators: StyleDecorator,
-} satisfies Meta<typeof Button>;
+}
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary = {
   args: {
     label: 'Storybook',
     type: 'filled',

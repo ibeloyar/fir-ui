@@ -3,13 +3,12 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/main.ts',
+      entry: './src/main.js',
       name: 'fir-ui',
-      fileName: (format) => `fir-ui.${format}.ts`,
+      fileName: (format) => `fir-ui.${format}.js`,
     },
   },
   plugins: [
