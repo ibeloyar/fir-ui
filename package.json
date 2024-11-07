@@ -1,7 +1,7 @@
 {
   "name": "fir-vue",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "./lib/fir-vue.umd.js",
   "module": "./lib/fir-vue.es.js",
