@@ -1,7 +1,7 @@
 {
   "name": "fir-ui",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "src/main.js",
   "files": [
