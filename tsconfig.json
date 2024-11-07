@@ -4,6 +4,8 @@
       "declaration": true,
       "emitDeclarationOnly": true,
       "outFile": "./lib/fir-vue.d.ts",
+      "moduleResolution": "node",
     },
     "include": ["src/**/*"],
+    "exclude": ["src/**/*.stories.*"],
 }
