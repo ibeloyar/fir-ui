@@ -7,9 +7,7 @@
     </button>
 </template>
 
-<script lang="ts" setup>
-import ref from 'vue'
-
+<script setup>
 const props = defineProps({
     label: {
         type: String,
@@ -17,7 +15,7 @@ const props = defineProps({
     type: {
         type: String,
         required: false,
-        default: 'filled',
+        default: 'filled', // 'filled', 'outline', 'clear'
     },
     size: {
         type: String,
@@ -28,15 +26,6 @@ const props = defineProps({
 
 const emit = defineEmits(['click'])
 
-// const classes = ref({
-//     'fir-button__root': true,
-//     filled: props.type === 'filled',
-//     outline: props.type === 'outline',
-//     clear: props.type === 'clear',
-//     small: props.size === 'small',
-//     medium: props.size === 'medium',
-//     large: props.size === 'large',
-// })
 </script>
 
 <style scoped>

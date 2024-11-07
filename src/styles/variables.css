@@ -85,8 +85,11 @@
     --fir-color-primary-light: var(--fir-color-green-light);
     --fir-color-primary-dark: var(--fir-color-green-dark);
     --fir-color-primary-highlight: var(--fir-color-brand-dark);
+    --fir-color-error: var(--fir-color-red);
 
     /* Sizes */
+    --fir-global-font-size-small: 14px;
+    --fir-global-font-size: 16px;
     --fir-global-border-radius: 4px;
     --fir-global-inputs-padding: 4px;
 
@@ -94,10 +97,19 @@
     --fir-global-duration: .2s;
 
     /* Button */
-    --fir-button-font-size-small: 12px;
+    --fir-button-font-size-small: 14px;
     --fir-button-font-size-medium: 16px;
     --fir-button-font-size-large: 20px;
     --fir-button-padding-small: 2px 4px;
     --fir-button-padding-medium: 4px 8px;
     --fir-button-padding-large: 8px 12px;
+
+    /* Input */
+    --fir-input-font-size: var(--fir-global-font-size);
+    --fir-input-padding: 4px 8px;
+    --fir-input-border: 1px solid var(--fir-color-divider);
+    --fir-input-border-hover: 1px solid var(--fir-color-divider-light);
+    --fir-input-border-focus: 1px solid var(--fir-color-divider-focus);
+    --fir-input-error-color : var(--fir-color-error);
+    --fir-input-error-font-size : var(--fir-global-font-size-small);
 }
