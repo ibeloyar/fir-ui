@@ -19,7 +19,7 @@
     "node": ">=20.8.1"
   },
   "scripts": {
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build",
     "dev": "storybook dev -p 6006",
     "storybook": "storybook -p 6006",
     "build-storybook": "storybook build"

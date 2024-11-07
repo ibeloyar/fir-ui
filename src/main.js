@@ -1,3 +1,9 @@
 import './styles/main.css';
 
-export { Button } from '@/components/Button/Button.vue';
+import Input from '@/components/Input/Input.vue';
+import Button from '@/components/Button/Button.vue';
+
+export {
+    Input,
+    Button,
+}
