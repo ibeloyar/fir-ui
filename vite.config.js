@@ -1,22 +1,21 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
     lib: {
       entry: './src/main.js',
-      name: 'fir-ui',
-      fileName: (format) => `fir-ui.${format}.js`,
+      name: 'fir-vue',
+      fileName: (format) => `fir-vue.${format}.js`,
+      formats: ['es', 'umd'],
     },
+    outDir: './lib',
   },
   plugins: [
     vue(),
+    dts({
+      insertTypesEntry: true,
+    })
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
 })
