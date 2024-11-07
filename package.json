@@ -5,17 +5,16 @@
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "./lib/fir-vue.umd.js",
   "module": "./lib/fir-vue.es.js",
-  "types": "./main.d.ts",
   "exports": {
     ".": {
-      "types": "./main.d.ts",
+      "types": "./lib/main.d.ts",
       "import": "./lib/fir-vue.es.js",
       "require": "./lib/fir-vue.umd.js"
     },
-    "./*": {
-      "types": "./*/main.d.ts",
-      "import": "./*/lib/fir-vue.es.js",
-      "require": "./*/lib/fir-vue.umd.js"
+    "./**/*": {
+      "types": "./lib/main.d.ts",
+      "import": "./lib/fir-vue.es.js",
+      "require": "./lib/fir-vue.umd.js"
     },
     "./lib/style.css": {
       "import": "./lib/style.css",
