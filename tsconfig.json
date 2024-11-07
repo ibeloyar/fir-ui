@@ -12,7 +12,7 @@
       "noFallthroughCasesInSwitch": true,
       "useDefineForClassFields": true,
       "outDir": "lib",
-      "declarationDir": "lib",
+      "outFile": "./lib/main.d.ts",
       "baseUrl": ".",
       "paths": {
         "@/*": [
