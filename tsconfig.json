@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "outFile": "./lib/fir-vue.d.ts",
+    },
+    "include": ["src/**/*"],
+}

@@ -5,7 +5,7 @@
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "./lib/fir-vue.umd.js",
   "module": "./lib/fir-vue.es.js",
-  "types": "./lib/main.d.ts",
+  "types": "./lib/fir-vue.d.ts",
   "files": [
     "lib"
   ],
