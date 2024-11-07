@@ -5,7 +5,23 @@
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "./lib/fir-vue.umd.js",
   "module": "./lib/fir-vue.es.js",
-  "types": "./lib/fir-vue.d.ts",
+  "types": "./main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./main.d.ts",
+      "import": "./lib/fir-vue.es.js",
+      "require": "./lib/fir-vue.umd.js"
+    },
+    "./*": {
+      "types": "./*/main.d.ts",
+      "import": "./*/lib/fir-vue.es.js",
+      "require": "./*/lib/fir-vue.umd.js"
+    },
+    "./lib/style.css": {
+      "import": "./lib/style.css",
+      "require": "./lib/style.css"
+    }
+  },
   "files": [
     "lib"
   ],
@@ -21,7 +37,7 @@
     "node": ">=20.8.1"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vue-tsc && vite build",
     "dev": "storybook dev -p 6006",
     "storybook": "storybook -p 6006",
     "build-storybook": "storybook build"
@@ -44,8 +60,10 @@
     "@vitejs/plugin-vue": "5.1.4",
     "semantic-release": "24.2.0",
     "storybook": "8.4.1",
+    "typescript": "5.6.3",
     "vite": "5.4.10",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "4.3.0",
+    "vue-tsc": "2.1.10"
   },
   "release": {
     "branches": [
