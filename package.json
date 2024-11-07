@@ -4,20 +4,19 @@
   "version": "0.0.1",
   "description": "A simple set of components for prototypes and small own projects on Vue 3.",
   "main": "src/main.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "keywords": [
     "ui-kit",
     "vue3"
   ],
-  "author": {
-    "name": "B-Dmitriy",
-    "email": "balyaevds.main@gmail.com"
-  },
+  "author": "B-Dmitriy <beloyar.dev@outlook.com>",
   "license": "MIT",
   "type": "module",
   "packageManager": "npm@10.8.1",
   "engines": {
-      "node": ">=22.4.0"
+    "node": ">=20.8.1"
   },
   "scripts": {
     "build": "vue-tsc -b && vite build",
@@ -26,6 +25,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "semantic-release": "^24.2.0",
     "vue": "3.5.12"
   },
   "devDependencies": {
@@ -40,5 +43,27 @@
     "@vitejs/plugin-vue": "5.1.4",
     "storybook": "8.4.1",
     "vite": "5.4.10"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "repositoryUrl": "git@github.com:B-Dmitriy/fir-ui.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package-lock.json",
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
   }
 }
