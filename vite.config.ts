@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   build: {
     lib: {
-      entry: './src/main.js',
+      entry: './src/main.ts',
       name: 'fir-vue',
       fileName: (format) => `fir-vue.${format}.js`,
       formats: ['es', 'umd'],
@@ -14,6 +14,8 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    dts(),
+    dts({
+      insertTypesEntry: true,
+    }),
   ],
 })

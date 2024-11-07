@@ -10,7 +10,7 @@
     <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
     error: {
         type: String,
