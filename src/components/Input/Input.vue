@@ -20,7 +20,7 @@ const props = defineProps({
 const model = defineModel('value')
 </script>
 
-<style scoped>
+<style>
     .fir-input__root {
         border: var(--fir-input-border);
         border-radius: var(--fir-global-border-radius);
