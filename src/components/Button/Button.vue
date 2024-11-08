@@ -28,7 +28,7 @@ const emit = defineEmits(['click'])
 
 </script>
 
-<style scoped>
+<style>
     .fir-button__root {
         transition: var(--fir-global-duration);
         border-radius: var(--fir-global-border-radius);
