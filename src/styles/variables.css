@@ -89,7 +89,8 @@
 
     /* Sizes */
     --fir-global-font-size-small: 14px;
-    --fir-global-font-size: 16px;
+    --fir-global-font-size-medium: 16px;
+    --fir-global-font-size-large: 20px;
     --fir-global-border-radius: 4px;
     --fir-global-inputs-padding: 4px;
 
@@ -97,15 +98,15 @@
     --fir-global-duration: .2s;
 
     /* Button */
-    --fir-button-font-size-small: 14px;
-    --fir-button-font-size-medium: 16px;
-    --fir-button-font-size-large: 20px;
+    --fir-button-font-size-small: var(--fir-global-font-size-small);
+    --fir-button-font-size-medium:  var(--fir-global-font-size-medium);
+    --fir-button-font-size-large: var(--fir-global-font-size-large);
     --fir-button-padding-small: 2px 4px;
     --fir-button-padding-medium: 4px 8px;
     --fir-button-padding-large: 8px 12px;
 
     /* Input */
-    --fir-input-font-size: var(--fir-global-font-size);
+    --fir-input-font-size: var(--fir-global-font-size-medium);
     --fir-input-padding: 4px 8px;
     --fir-input-border: 1px solid var(--fir-color-divider);
     --fir-input-border-hover: 1px solid var(--fir-color-divider-light);

@@ -11,11 +11,9 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-    error: {
-        type: String,
-        required: false,
-    },
+import { FirInputProps } from './FirInput.types';
+const props = withDefaults(defineProps<FirInputProps>(), {
+    error: '',
 })
 const model = defineModel('value')
 </script>

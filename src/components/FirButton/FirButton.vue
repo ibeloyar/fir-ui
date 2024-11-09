@@ -1,28 +1,19 @@
 <template>
     <button 
-        :class="['fir-button__root', props.type, props.size]" 
+        :class="['fir-button__root', props.view, props.size]" 
         @:click="emit('click', $event)"
     >
-        {{ props.label }}
+        <slot></slot>
     </button>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-    label: {
-        type: String,
-    },
-    type: {
-        type: String,
-        required: false,
-        default: 'filled', // 'filled', 'outline', 'clear'
-    },
-    size: {
-        type: String,
-        required: false,
-        default: 'medium', // 'small', 'medium', 'large'
-    }
-})
+import { FirButtonProps } from './FirButton.types';
+
+const props = withDefaults(defineProps<FirButtonProps>(), {
+    view: 'filled',
+    size: 'medium',
+});
 
 const emit = defineEmits(['click'])
 
@@ -32,6 +23,7 @@ const emit = defineEmits(['click'])
     .fir-button__root {
         transition: var(--fir-global-duration);
         border-radius: var(--fir-global-border-radius);
+        cursor: pointer;
     }
     .fir-button__root:hover {
         opacity: 0.8;
