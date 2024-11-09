@@ -1,13 +1,13 @@
 <template>
     <label :class="{
-            'fir-input__wrapper': true,
-            'fir-input__disabled': $attrs.disabled,
-        }">
+        'fir-input__wrapper': true,
+        'fir-input__disabled': $attrs.disabled,
+    }">
         <span v-if="props.label" 
-        :class="{
-            'fir-input__label': true,
-            'fir-input__label_error': props.error,
-        }">
+              :class="{
+                  'fir-input__label': true,
+                  'fir-input__label_error': props.error,
+              }">
             {{ props.label }}
         </span>
         <input

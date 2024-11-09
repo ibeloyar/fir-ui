@@ -5,12 +5,13 @@ import FirButton from './FirButton.vue';
 import type { FirButtonProps } from './FirButton.types.ts';
 
 const meta = {
-    title: 'Example/FirButton',
+    title: 'Components/FirButton',
     component: FirButton,
     tags: ['autodocs'],
     argTypes: {
-        view: { control: 'select', options: ['filled', 'outline', 'clear'], type: 'string' },
-        size: { control: 'select', options: ['small', 'medium', 'large'], type: 'string' },
+        view: { control: 'select', description: 'View variant', options: ['filled', 'outline', 'clear'], type: 'string' },
+        size: { control: 'select', description: 'Button size', options: ['small', 'medium', 'large'], type: 'string' },
+        disabled: { control: 'boolean', description: 'Is disabled', type: 'boolean' },
     },
     args: {
         onClick: fn(),
@@ -33,5 +34,7 @@ export const Filled: Story = {
         view: 'filled',
         size: 'medium',
         default: 'Fir Vue',
+        disabled: false,
     },
 };
+

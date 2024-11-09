@@ -69,6 +69,7 @@
     --fir-global-inputs-padding: 4px;
 
     /* Other */
+    --fir-color-primary: var(--fir-color-green);
     --fir-global-duration: .2s;
 
     /* Text colors */
@@ -84,12 +85,13 @@
     --fir-global-border-color-error: var(--fir-color-red);
 
     /* Button */
-    --fir-button-font-size-small: var(--fir-global-font-size-small);
+    --fir-button-font-size-small: 13px;
     --fir-button-font-size-medium:  var(--fir-global-font-size-medium);
     --fir-button-font-size-large: var(--fir-global-font-size-large);
     --fir-button-padding-small: 2px 4px;
     --fir-button-padding-medium: 4px 8px;
     --fir-button-padding-large: 8px 12px;
+    --fir-button-disable-bg: var(--fir-color-gray-light-4);
 
     /* Input */
     --fir-input-font-size: var(--fir-global-font-size-medium);

@@ -12,5 +12,6 @@ const config: StorybookConfig = {
         name: '@storybook/vue3-vite',
         options: {},
     },
+    
 };
 export default config;
