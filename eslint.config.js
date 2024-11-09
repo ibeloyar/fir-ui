@@ -6,7 +6,11 @@ export default [
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
     rules: {
-      semi: ["error", "always"]
+      semi: ["error", "always"], 
+      quotes: [ "error", "single" ],
+      indent: ["error", 4],
+     "vue/script-indent": ["error", 4 ],
+     "vue/html-indent": ["error", 4 ],
     }
   },
 
