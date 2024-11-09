@@ -14,8 +14,8 @@
 import { FirInputProps } from './FirInput.types';
 const props = withDefaults(defineProps<FirInputProps>(), {
     error: '',
-})
-const model = defineModel('value')
+});
+const model = defineModel('value');
 </script>
 
 <style>

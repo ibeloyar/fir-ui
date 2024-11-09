@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<FirButtonProps>(), {
     size: 'medium',
 });
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(['click']);
 
 </script>
 
