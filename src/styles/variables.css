@@ -21,20 +21,6 @@
     --fir-color-gray-dark-3: #3a3a3a;
     --fir-color-gray-dark-4: #282828;
     --fir-color-gray-dark-5: #202020;
-    --fir-color-divider-light-1: rgba(60, 60, 60, .29);
-    --fir-color-divider-light-2: rgba(60, 60, 60, .12);
-    --fir-color-divider-dark-1: rgba(84, 84, 84, .65);
-    --fir-color-divider-dark-2: rgba(84, 84, 84, .48);
-    --fir-color-text-light-1: var(--fir-color-indigo);
-    --fir-color-text-light-2: rgba(60, 60, 60, .7);
-    --fir-color-text-light-3: rgba(60, 60, 60, .33);
-    --fir-color-text-light-4: rgba(60, 60, 60, .18);
-    --fir-color-text-light-code: var(--fir-color-indigo-soft);
-    --fir-color-text-dark-1: rgba(255, 255, 255, .87);
-    --fir-color-text-dark-2: rgba(235, 235, 235, .6);
-    --fir-color-text-dark-3: rgba(235, 235, 235, .38);
-    --fir-color-text-dark-4: rgba(235, 235, 235, .18);
-    --fir-color-text-dark-code: var(--fir-color-indigo-light);
     --fir-color-green: #42b883;
     --fir-color-green-light: #42d392;
     --fir-color-green-lighter: #35eb9a;
@@ -73,7 +59,7 @@
     --fir-global-duration: .2s;
 
     /* Text colors */
-    --fir-global-text-color: var(--fir-color-text-light-1);
+    --fir-global-text-color: var(--fir-color-black-soft);
     --fir-global-text-disabled-color: var(--fir-color-gray-light-1);
     --fir-global-text-error-color: var(--fir-color-red);
 
@@ -104,4 +90,10 @@
     --fir-input-border-error: 1px solid var(--fir-global-border-color-error);
     --fir-input-error-font-size : 14px;
     --fir-input-ph-font-size : 14px;
+
+    /* Modal */
+    --fir-modal-bg-color: var(--fir-color-white-mute);
+    --fir-modal-padding: 24px;
+    --fir-modal-wrapper-bg-color: rgba(0, 0, 0, 0.3);
+    --fir-modal-border-radius: var(--fir-global-border-radius);
 }
