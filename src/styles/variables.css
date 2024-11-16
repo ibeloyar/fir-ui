@@ -104,4 +104,8 @@
     --fir-input-border-error: 1px solid var(--fir-global-border-color-error);
     --fir-input-error-font-size : 14px;
     --fir-input-ph-font-size : 14px;
+
+    /* Table */
+    --fir-table-border-radius: var(--fir-global-border-radius);
+    --fir-table-border: 1px solid var(--fir-global-border-color);
 }
