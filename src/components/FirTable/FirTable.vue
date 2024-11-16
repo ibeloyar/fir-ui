@@ -2,7 +2,7 @@
     <table class="fir-table__wrapper">
         <thead class="fir-table__head">
             <tr>
-                <th 
+                <th
                     v-for="column in props.columns" 
                     v-bind:key="column.field"
                     v-bind:align="column.align || 'left'"
@@ -27,7 +27,7 @@
                     >
                         {{ row[column.field] }}
                     </td>
-                    <td v-else>--</td>            
+                    <td v-else v-bind:align="column.align">--</td>            
                 </template>
             </tr>
         </tbody>
