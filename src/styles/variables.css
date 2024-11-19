@@ -45,7 +45,9 @@
     --fir-color-purple-light: #e936eb;
     --fir-color-purple-lighter: #f616f8;
     --fir-color-purple-dark: #823c83;
-    --fir-color-purple-darker: #602960
+    --fir-color-purple-darker: #602960;
+    --fir-color-transparent-light: rgba(0, 0, 0, 0.15);
+    --fir-color-transparent: rgba(0, 0, 0, 0.3);
 
     /* Sizes */
     --fir-global-font-size-small: 14px;
@@ -55,8 +57,8 @@
     --fir-global-inputs-padding: 4px;
 
     /* Other */
-    --fir-color-primary: var(--fir-color-green);
     --fir-global-duration: .2s;
+    --fir-color-primary: var(--fir-color-green);
 
     /* Text colors */
     --fir-global-text-color: var(--fir-color-black-soft);
@@ -77,7 +79,14 @@
     --fir-button-padding-small: 2px 4px;
     --fir-button-padding-medium: 4px 8px;
     --fir-button-padding-large: 8px 12px;
-    --fir-button-disable-bg: var(--fir-color-gray-light-4);
+    --fir-button-bg-disable: var(--fir-color-gray-light-4);
+    --fir-button-hover-bg: var(--fir-color-green-light);
+
+    /* IconButton */
+    --fir-icon-button-border: 1px solid transparent;
+    --fir-icon-button-border-radius: 50%;
+    --fir-icon-button-bg-color: transparent;
+    --fir-icon-button-bg-color-hover: var(--fir-color-transparent-light);
 
     /* Input */
     --fir-input-font-size: var(--fir-global-font-size-medium);
@@ -94,6 +103,6 @@
     /* Modal */
     --fir-modal-bg-color: var(--fir-color-white-mute);
     --fir-modal-padding: 24px;
-    --fir-modal-wrapper-bg-color: rgba(0, 0, 0, 0.3);
+    --fir-modal-wrapper-bg-color: var(--fir-color-transparent);
     --fir-modal-border-radius: var(--fir-global-border-radius);
 }

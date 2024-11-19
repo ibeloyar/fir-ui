@@ -4,16 +4,17 @@ import FirInput from './FirInput.vue';
 import type { FirInputProps } from './FirInput.types.ts';
 
 const meta = {
-    title: 'Components/FirInput',
+    title: 'Components/Inputs/FirInput',
     component: FirInput,
     tags: ['autodocs'],
     argTypes: {
         value: { control: 'text', description: 'Input value', type: 'string' },
+        placeholder: { control: 'text', description: 'Placeholder value', type: 'string' },
         error: { control: 'text', description: 'Error text', type: 'string' },
         disabled: { control: 'boolean', description: 'Is disabled', type: 'boolean' },
     },
  	args: {
-        type: 'text',
+
     },
 } satisfies Meta<FirInputProps>;
 
@@ -25,6 +26,6 @@ export const Default: Story = {
         label: 'Username',
         error: '',
         disabled: false,
-        placeholder: 'Enter username'
+        placeholder: 'Enter username',
     }
 };
