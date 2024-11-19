@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { FirButtonProps } from './FirButton.types';
+import type { FirButtonProps } from './FirButton.types';
 
 const props = withDefaults(defineProps<FirButtonProps>(), {
     view: 'filled',

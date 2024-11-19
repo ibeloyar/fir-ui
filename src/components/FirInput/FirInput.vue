@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { FirInputProps } from './FirInput.types';
+import type { FirInputProps } from './FirInput.types';
 
 const props = withDefaults(defineProps<FirInputProps>(), {
     error: '',
