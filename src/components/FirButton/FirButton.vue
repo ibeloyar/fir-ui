@@ -45,6 +45,7 @@ const emit = defineEmits(['click']);
     .fir-button__root.fir-button__outline {
         border: 1px solid var(--fir-color-primary);
         background-color:transparent;
+        color: var(--fir-color-primary);
     }
     .fir-button__root.fir-button__outline:disabled {
         color: var(--fir-global-text-disabled-color);
