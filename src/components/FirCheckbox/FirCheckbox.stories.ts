@@ -10,6 +10,9 @@ const meta = {
     tags: ['autodocs'],
     argTypes: {
         size: { control: 'select', description: 'Checkbox size', options: ['small', 'medium', 'large'], type: 'string' },
+        label: { control: 'text', description: 'Checkbox label', type: 'string' },
+        tooltip: { control: 'text', description: 'Checkbox tooltip', type: 'string' },
+        error: { control: 'text', description: 'Checkbox error', type: 'string' },
         disabled: { control: 'boolean', description: 'Is disabled', type: 'boolean' },
     },
     args: {
@@ -23,6 +26,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         size: 'medium',
+        label: 'Fir checkbox'
     },
 };
 
