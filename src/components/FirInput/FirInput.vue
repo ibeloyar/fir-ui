@@ -17,6 +17,7 @@
             }"
             v-model="model"
             v-bind="$attrs"
+            type="text"
         />
         <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
     </label>

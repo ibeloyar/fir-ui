@@ -20,7 +20,6 @@ const props = withDefaults(defineProps<FirButtonProps>(), {
 });
 
 const emit = defineEmits(['click']);
-
 </script>
 
 <style>
@@ -40,7 +39,7 @@ const emit = defineEmits(['click']);
     .fir-button__root.fir-button__filled:disabled {
         color: var(--fir-global-text-disabled-color);
         border: 1px solid transparent;
-        background:var(--fir-button-disable-bg);
+        background:var(--fir-button-bg-disable);
     }
     .fir-button__root.fir-button__outline {
         border: 1px solid var(--fir-color-primary);
@@ -72,5 +71,9 @@ const emit = defineEmits(['click']);
     }
     .fir-button__root:hover:not([disabled]) {
         opacity: 0.8;
+    }    
+    .fir-button__root.fir-button__filled:hover:not([disabled]) {
+        opacity: 1;
+        background-color: var(--fir-button-hover-bg);
     }
 </style>
