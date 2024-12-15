@@ -4,7 +4,7 @@ import FirInput from './FirInput.vue';
 import type { FirInputProps } from './FirInput.types.ts';
 
 const meta = {
-    title: 'Components/Inputs/FirInput',
+    title: 'Components/FirInput',
     component: FirInput,
     tags: ['autodocs'],
     argTypes: {

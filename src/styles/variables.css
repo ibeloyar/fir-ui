@@ -82,6 +82,11 @@
     --fir-button-bg-disable: var(--fir-color-gray-light-4);
     --fir-button-hover-bg: var(--fir-color-green-light);
 
+    /* Checkbox */
+    --fir-checkbox-border: 1px solid var(--fir-color-primary);
+    --fir-checkbox-border-color-disabled: var(--fir-global-text-disabled-color);
+    --fir-checkbox-bg-color-disabled: var(--fir-color-gray-light-3);
+
     /* IconButton */
     --fir-icon-button-border: 1px solid transparent;
     --fir-icon-button-border-radius: 50%;

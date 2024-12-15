@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import type { FirInputProps } from './FirInput.types';
+
+const props = withDefaults(defineProps<FirInputProps>(), {
+    error: '',
+});
+
+const model = defineModel('value');
+</script>
+
 <template>
     <label :class="{
         'fir-input__wrapper': true,
@@ -15,23 +25,13 @@
                 'fir-input__root': true,
                 'fir-input__root_error': !!props.error,
             }"
-            v-model="model"
             v-bind="$attrs"
+            v-model="model"
             type="text"
         />
         <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
     </label>
 </template>
-
-<script setup lang="ts">
-import type { FirInputProps } from './FirInput.types';
-
-const props = withDefaults(defineProps<FirInputProps>(), {
-    error: '',
-});
-
-const model = defineModel('value');
-</script>
 
 <style>
     .fir-input__wrapper {
