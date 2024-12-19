@@ -52,6 +52,25 @@
     --fir-color-purple-darker: #602960;
     --fir-color-transparent-light: rgba(0, 0, 0, 0.15);
     --fir-color-transparent: rgba(0, 0, 0, 0.3);
+    --fir-color-state-red: #C62828;
+    --fir-color-state-red-30: #EEBFBF;
+    --fir-color-state-red-10: #F9E9E9;
+    --fir-color-state-red-90: #624242;
+    --fir-color-state-green: #00B233;
+    --fir-color-state-green-30: #B3E8C2;
+    --fir-color-state-green-10: #E5F7EB;
+    --fir-color-state-green-90: #385B44;
+    --fir-color-state-blue: #379BD9;
+    --fir-color-state-blue-30: #C3E1F4;
+    --fir-color-state-blue-10: #EBF5FB;
+    --fir-color-state-blue-90: #3C5767;
+    --fir-color-state-yellow: #FFB735;
+    --fir-color-state-yellow-30: #FFE9C2;
+    --fir-color-state-yellow-10: #FFF8EB;
+    --fir-color-state-orange: #F5771E;
+    --fir-color-state-orange-30: #FCD6BB;
+    --fir-color-state-orange-10: #FEF1E8;
+    --fir-color-state-orange-90: #6D523F;
 
     /* Sizes */
     --fir-global-font-size-small: 14px;

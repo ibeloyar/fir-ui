@@ -9,14 +9,11 @@ const meta = {
     component: FirChip,
     tags: ['autodocs'],
     argTypes: {
-        type: { type: 'string', description: 'Chip type', control: 'select', options: ['default', 'double'] },
-        view: { type: 'string', description: 'Chip view type', control: 'select', options: ['filled', 'outlined'] },
+        view: { type: 'string', description: 'Chip view type', control: 'select', options: ['filled', 'outlined', 'double'] },
         color: { type: 'string', description: 'Chip color', control: 'select', options: ['red', 'yellow', 'green', 'blue',  'gray', 'custom'] },
         title: { type: 'string', description: 'Left side title', control: 'text' },
         bgCustomColor: { type: 'string', description: 'Background chip custom color', control: 'text' },
         textCustomColor: { type: 'string', description: 'Text chip custom color', control: 'text' },
-    },
-    args: {
     },
     parameters: {
         slots: {
@@ -33,8 +30,17 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { 
     args: {
-        title: 'Title',
+        default: 'chip text',
+        color: 'blue',
+        onClick: fn(),
+    },
+};
+
+export const Double: Story = { 
+    args: {
+        title: 'Double',
+        view: 'double',
         default: 'chip',
-        color: 'blue'
+        color: 'green'
     },
 };

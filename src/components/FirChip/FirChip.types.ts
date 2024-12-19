@@ -1,6 +1,5 @@
 export interface FirChipProps {
-    type?: 'default' | 'double';
-    view?: 'filled' | 'outlined';
+    view?: 'filled' | 'outlined' | 'double';
     color: 'custom' | 'red' | 'yellow' | 'green' | 'blue' | 'gray';
     bgCustomColor?: string; 
     textCustomColor?: string; 
