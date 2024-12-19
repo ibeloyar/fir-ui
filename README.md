@@ -11,7 +11,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [ ] Autocomplete
 - [x] Breadcrumbs
 - [x] Button
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Chip
 - [ ] IconButton
 - [ ] InputText

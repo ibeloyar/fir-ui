@@ -24,21 +24,25 @@
     --fir-color-green: #42b883;
     --fir-color-green-light: #42d392;
     --fir-color-green-lighter: #35eb9a;
+    --fir-color-green-lighter-1: #a2ffd5;
     --fir-color-green-dark: #33a06f;
     --fir-color-green-darker: #155f3e;
     --fir-color-blue: #3b8eed;
     --fir-color-blue-light: #549ced;
-    --fir-color-blue-lighter: #50a2ff;
+    --fir-color-blue-lighter: #7fb6f5;
+    --fir-color-blue-lighter-1: #b6d8ff;
     --fir-color-blue-dark: #3468a3;
     --fir-color-blue-darker: #255489;
     --fir-color-yellow: #ffc517;
     --fir-color-yellow-light: #ffe417;
     --fir-color-yellow-lighter: #ffff17;
+    --fir-color-yellow-lighter-1: #ffffaa;
     --fir-color-yellow-dark: #e0ad15;
     --fir-color-yellow-darker: #bc9112;
-    --fir-color-red: #ed3c50;
+    --fir-color-red: #ed3c3c;
     --fir-color-red-light: #f43771;
     --fir-color-red-lighter: #fd1d7c;
+    --fir-color-red-lighter-1: #ffaaaa;
     --fir-color-red-dark: #cd2d3f;
     --fir-color-red-darker: #ab2131;
     --fir-color-purple: #de41e0;
@@ -86,6 +90,10 @@
     --fir-checkbox-border: 1px solid var(--fir-color-primary);
     --fir-checkbox-border-color-disabled: var(--fir-global-text-disabled-color);
     --fir-checkbox-bg-color-disabled: var(--fir-color-gray-light-3);
+
+    /* Chip */
+    --fir-chip-font-size: 13px;
+    --fir-chip-border-radius: 16px;
 
     /* IconButton */
     --fir-icon-button-border: 1px solid transparent;
