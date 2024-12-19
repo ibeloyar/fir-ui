@@ -1,12 +1,13 @@
 <template>
     <button :class="{
-        'fir-chip__wrapper': true, 
-        [`fir-chip__${props.color}`]: true,
-        [`fir-chip__${props.view}`]: true,
-        ['fir-chip__wrapper_clickable']: !!props.onClick,
-        }"
-        @click="onAction"
-        @keyup.prevent
+                'fir-chip__wrapper': true, 
+                [`fir-chip__${props.color}`]: true,
+                [`fir-chip__${props.view}`]: true,
+                ['fir-chip__wrapper_clickable']: !!props.onClick,
+            }"
+            @click="onAction"
+            @keyup.prevent
+            :style="{ ['background-color']: `${props.bgCustomColor}` }"
     >
         <span 
             class="fir-chip__title"
@@ -16,6 +17,7 @@
         </span>
         <span
             class="fir-chip__content"
+            :style="{ color: `${props.textCustomColor}` }"
         >
             <slot></slot>
         </span>
@@ -23,10 +25,11 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
+import { withDefaults } from 'vue';
 import type { FirChipProps } from './FirChip.types';
 
 const props = withDefaults(defineProps<FirChipProps>(), {
+    title: '',
     type: 'default',
     view: 'filled',
 });
@@ -47,6 +50,7 @@ const onAction = () => props.onClick && props.onClick();
         max-width: 240px;
         overflow: hidden;
         text-overflow: ellipsis;
+        border: none;
     }
     .fir-chip__wrapper_clickable {
         cursor: pointer;

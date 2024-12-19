@@ -44,3 +44,13 @@ export const Double: Story = {
         color: 'green'
     },
 };
+
+export const Custom: Story = { 
+    args: {
+        view: 'filled',
+        default: 'chip',
+        color: 'custom',
+        bgCustomColor: '#ae23b9',
+        textCustomColor: 'white'
+    },
+};
