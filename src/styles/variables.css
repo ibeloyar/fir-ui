@@ -72,10 +72,13 @@
     --fir-color-state-orange-10: #FEF1E8;
     --fir-color-state-orange-90: #6D523F;
 
-    /* Sizes */
+    /* Font */
+    --fir-global-font-family: Inter, sans-serif;
     --fir-global-font-size-small: 14px;
     --fir-global-font-size-medium: 16px;
     --fir-global-font-size-large: 20px;
+
+    /* Sizes */
     --fir-global-border-radius: 4px;
     --fir-global-inputs-padding: 4px;
 
@@ -111,7 +114,7 @@
     --fir-checkbox-bg-color-disabled: var(--fir-color-gray-light-3);
 
     /* Chip */
-    --fir-chip-font-size: 13px;
+    --fir-chip-font-size: 12px;
     --fir-chip-border-radius: 16px;
 
     /* IconButton */
