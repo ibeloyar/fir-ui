@@ -57,13 +57,13 @@ if (props.view === 'double' && props.bgCustomColor && props.titleCustomColor) {
 
 <style>
     .fir-chip__wrapper {
+        font-family: var(--fir-global-font-family);
+        font-size: var(--fir-chip-font-size);
         box-sizing: border-box;
         display: flex;
         align-items: center;
         padding: 2px 6px;
         border-radius: var(--fir-chip-border-radius);
-        font-size: var(--fir-chip-font-size);
-        letter-spacing: 0.24px;
         max-width: 240px;
         overflow: hidden;
         text-overflow: ellipsis;
