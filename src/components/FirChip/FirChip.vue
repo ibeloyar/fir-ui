@@ -7,11 +7,12 @@
             }"
             @click="onAction"
             @keyup.prevent
-            :style="{ ['background-color']: `${props.bgCustomColor}` }"
+            :style="wrapperStyles"
     >
         <span 
             class="fir-chip__title"
             v-if="props.view === 'double'"
+            :style="titleStyles"
         >
             {{ props.title }}
         </span>
@@ -25,16 +26,32 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue';
+import { reactive, withDefaults } from 'vue';
 import type { FirChipProps } from './FirChip.types';
 
 const props = withDefaults(defineProps<FirChipProps>(), {
-    title: '',
     type: 'default',
     view: 'filled',
 });
 
 const onAction = () => props.onClick && props.onClick();
+
+const wrapperStyles = reactive({ backgroundColor: undefined, border: undefined });
+if (props.view === 'filled' && props.bgCustomColor) {
+    wrapperStyles.backgroundColor = `${props.bgCustomColor}`;
+}
+if (props.view === 'outlined' && props.bgCustomColor) {
+    wrapperStyles.border = `1px solid ${props.bgCustomColor}`;
+}
+if (props.view === 'double' && props.bgCustomColor) {
+    wrapperStyles.border = `2px solid ${props.bgCustomColor}`;
+}
+
+const titleStyles = reactive({ color: undefined, backgroundColor: undefined, border: undefined });
+if (props.view === 'double' && props.bgCustomColor && props.titleCustomColor) {
+    titleStyles.backgroundColor = `${props.bgCustomColor}`;
+    titleStyles.color = `${props.titleCustomColor}`;
+}
 
 </script>
 
@@ -51,6 +68,10 @@ const onAction = () => props.onClick && props.onClick();
         overflow: hidden;
         text-overflow: ellipsis;
         border: none;
+        height: 24px;
+    }
+    .fir-chip__content {
+        line-height: 16px;
     }
     .fir-chip__wrapper_clickable {
         cursor: pointer;
@@ -122,7 +143,7 @@ const onAction = () => props.onClick && props.onClick();
         align-items: center;
         min-width: 20px;
         padding: 1px 5px;
-        height: 16px;
+        height: 24px;
         line-height: 16px;
     }
     .fir-chip__double .fir-chip__content {

@@ -3,6 +3,7 @@ export interface FirChipProps {
     color: 'custom' | 'red' | 'yellow' | 'green' | 'blue' | 'gray';
     bgCustomColor?: string; 
     textCustomColor?: string; 
+    titleCustomColor?: string;
     title?: string;
     onClick?: () => void;
 }

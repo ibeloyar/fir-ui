@@ -12,8 +12,9 @@ const meta = {
         view: { type: 'string', description: 'Chip view type', control: 'select', options: ['filled', 'outlined', 'double'] },
         color: { type: 'string', description: 'Chip color', control: 'select', options: ['red', 'yellow', 'green', 'blue',  'gray', 'custom'] },
         title: { type: 'string', description: 'Left side title', control: 'text' },
-        bgCustomColor: { type: 'string', description: 'Background chip custom color', control: 'text' },
-        textCustomColor: { type: 'string', description: 'Text chip custom color', control: 'text' },
+        bgCustomColor: { type: 'string', description: 'Background chip custom color', control: 'color' },
+        textCustomColor: { type: 'string', description: 'Text chip custom color', control: 'color' },
+        titleCustomColor: { type: 'string', description: 'Title chip custom color', control: 'color' },
     },
     parameters: {
         slots: {
@@ -45,12 +46,46 @@ export const Double: Story = {
     },
 };
 
-export const Custom: Story = { 
+export const Custom: Story = {
     args: {
-        view: 'filled',
-        default: 'chip',
-        color: 'custom',
-        bgCustomColor: '#ae23b9',
-        textCustomColor: 'white'
+        color: 'blue',
+        default: 'chip'
     },
+    render: () => ({
+        components: { FirChip },
+        template: `
+        <div style="display: flex; gap: 8px;">
+
+        <FirChip 
+            color="custom" 
+            view="filled" 
+            bgCustomColor="#ae23b9"
+            textCustomColor="white"    
+        >
+                chip 1
+        </FirChip>
+        
+        <FirChip 
+            color="custom" 
+            view="outlined" 
+            bgCustomColor="#ae23b9"
+            textCustomColor="#ae23b9"    
+        >
+                chip 2
+        </FirChip>
+
+        <FirChip 
+            view="double"
+            color="custom"
+            title="title"
+            bgCustomColor="#ae23b9"
+            textCustomColor="var(--fir-global-text-color)"
+            titleCustomColor="white"
+        >
+                chip 3
+        </FirChip>
+
+        </div>
+        `
+    })
 };
