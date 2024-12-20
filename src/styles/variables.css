@@ -24,21 +24,25 @@
     --fir-color-green: #42b883;
     --fir-color-green-light: #42d392;
     --fir-color-green-lighter: #35eb9a;
+    --fir-color-green-lighter-1: #a2ffd5;
     --fir-color-green-dark: #33a06f;
     --fir-color-green-darker: #155f3e;
     --fir-color-blue: #3b8eed;
     --fir-color-blue-light: #549ced;
-    --fir-color-blue-lighter: #50a2ff;
+    --fir-color-blue-lighter: #7fb6f5;
+    --fir-color-blue-lighter-1: #b6d8ff;
     --fir-color-blue-dark: #3468a3;
     --fir-color-blue-darker: #255489;
     --fir-color-yellow: #ffc517;
     --fir-color-yellow-light: #ffe417;
     --fir-color-yellow-lighter: #ffff17;
+    --fir-color-yellow-lighter-1: #ffffaa;
     --fir-color-yellow-dark: #e0ad15;
     --fir-color-yellow-darker: #bc9112;
-    --fir-color-red: #ed3c50;
+    --fir-color-red: #ed3c3c;
     --fir-color-red-light: #f43771;
     --fir-color-red-lighter: #fd1d7c;
+    --fir-color-red-lighter-1: #ffaaaa;
     --fir-color-red-dark: #cd2d3f;
     --fir-color-red-darker: #ab2131;
     --fir-color-purple: #de41e0;
@@ -48,6 +52,25 @@
     --fir-color-purple-darker: #602960;
     --fir-color-transparent-light: rgba(0, 0, 0, 0.15);
     --fir-color-transparent: rgba(0, 0, 0, 0.3);
+    --fir-color-state-red: #C62828;
+    --fir-color-state-red-30: #EEBFBF;
+    --fir-color-state-red-10: #F9E9E9;
+    --fir-color-state-red-90: #624242;
+    --fir-color-state-green: #00B233;
+    --fir-color-state-green-30: #B3E8C2;
+    --fir-color-state-green-10: #E5F7EB;
+    --fir-color-state-green-90: #385B44;
+    --fir-color-state-blue: #379BD9;
+    --fir-color-state-blue-30: #C3E1F4;
+    --fir-color-state-blue-10: #EBF5FB;
+    --fir-color-state-blue-90: #3C5767;
+    --fir-color-state-yellow: #FFB735;
+    --fir-color-state-yellow-30: #FFE9C2;
+    --fir-color-state-yellow-10: #FFF8EB;
+    --fir-color-state-orange: #F5771E;
+    --fir-color-state-orange-30: #FCD6BB;
+    --fir-color-state-orange-10: #FEF1E8;
+    --fir-color-state-orange-90: #6D523F;
 
     /* Sizes */
     --fir-global-font-size-small: 14px;
@@ -86,6 +109,10 @@
     --fir-checkbox-border: 1px solid var(--fir-color-primary);
     --fir-checkbox-border-color-disabled: var(--fir-global-text-disabled-color);
     --fir-checkbox-bg-color-disabled: var(--fir-color-gray-light-3);
+
+    /* Chip */
+    --fir-chip-font-size: 13px;
+    --fir-chip-border-radius: 16px;
 
     /* IconButton */
     --fir-icon-button-border: 1px solid transparent;

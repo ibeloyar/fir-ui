@@ -9,14 +9,14 @@ A simple set of components for prototypes and small own projects on Vue 3.
 **Components:**<br/>
 - [ ] Accordion
 - [ ] Autocomplete
-- [x] Breadcrumbs
-- [x] Button
+- [ ] Breadcrumbs
+- [ ] Button
 - [ ] Checkbox
 - [ ] Chip
 - [ ] IconButton
 - [ ] InputText
 - [ ] InputPassword
-- [x] Modal
+- [ ] Modal
 - [ ] Popper
 - [ ] Search
 - [ ] Select
