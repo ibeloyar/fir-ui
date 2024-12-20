@@ -71,6 +71,7 @@
     --fir-color-state-orange-30: #FCD6BB;
     --fir-color-state-orange-10: #FEF1E8;
     --fir-color-state-orange-90: #6D523F;
+    --fir-color-primary: var(--fir-color-green);
 
     /* Font */
     --fir-global-font-family: Inter, sans-serif;
@@ -84,7 +85,6 @@
 
     /* Other */
     --fir-global-duration: .2s;
-    --fir-color-primary: var(--fir-color-green);
 
     /* Text colors */
     --fir-global-text-color: var(--fir-color-black-soft);
