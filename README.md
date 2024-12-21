@@ -10,10 +10,10 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [ ] Accordion
 - [ ] Autocomplete
 - [x] Breadcrumbs
-- [ ] Button
-- [ ] Checkbox
+- [x] Button
+- [x] Checkbox
 - [x] Chip
-- [ ] IconButton
+- [x] IconButton
 - [ ] InputText
 - [ ] InputPassword
 - [x] Modal
@@ -23,5 +23,5 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [ ] Switch
 
 **Env:**
-- [ ] Colors
+- [x] Colors
 - [x] Font
