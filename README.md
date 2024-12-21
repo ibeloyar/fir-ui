@@ -7,7 +7,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 
 ### For MVP (v.2.0) needs:
 **Components:**<br/>
-- [ ] Accordion
+- [x] Accordion
 - [ ] Autocomplete
 - [x] Breadcrumbs
 - [x] Button
