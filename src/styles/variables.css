@@ -46,11 +46,14 @@
     --fir-c-transparent: rgba(0, 0, 0, 0.3);
     --fir-c-transparent-light: rgba(0, 0, 0, 0.15);
 
-    /* Font */
+    /* Text, Font */
     --fir-global-font-family: Inter, sans-serif;
     --fir-global-font-size-small: 12px;
     --fir-global-font-size-medium: 14px;
     --fir-global-font-size-large: 18px;
+    --fir-global-text-color: var(--fir-c-black-soft);
+    --fir-global-text-disabled-color: var(--fir-c-gray-light-1);
+    --fir-global-text-error-color: var(--fir-c-red);
 
     /* Sizes */
     --fir-global-border-radius: 4px;
@@ -59,10 +62,7 @@
     /* Other */
     --fir-global-duration: .25s;
 
-    /* Text colors */
-    --fir-global-text-color: var(--fir-c-black-soft);
-    --fir-global-text-disabled-color: var(--fir-c-gray-light-1);
-    --fir-global-text-error-color: var(--fir-c-red);
+
 
     /* Borders */
     --fir-global-border-color: var(--fir-c-gray-light-1);
