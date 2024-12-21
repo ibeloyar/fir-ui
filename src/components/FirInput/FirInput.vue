@@ -34,50 +34,50 @@ const model = defineModel('value');
 </template>
 
 <style>
-    .fir-input__wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-
-        color: var(--fir-global-text-color);
-    }
-    .fir-input__wrapper.fir-input__disabled {
-        color: var(--fir-global-text-disabled-color);
-    }
-    .fir-input__label {
-        margin-left: 4px;
-        font-size: var(--fir-input-label-font-size);
-    }
-    .fir-input__label.fir-input__label_error {
-        color: var(--fir-global-text-error-color);
-    }
-    .fir-input__root {
-        border: var(--fir-input-border);
-        border-radius: var(--fir-global-border-radius);
-        padding: var(--fir-input-padding);
-        transition: var(--fir-global-duration);
-        color: inherit;
-        font-size: var(--fir-input-font-size);
-    }
-    .fir-input__root::placeholder {
-        font-size: var(--fir-input-ph-font-size);
-    }
-    .fir-input__root:hover {
-        border: var(--fir-input-border-hover);
-    }
-    .fir-input__root:disabled {
-        border: var(--fir-input-border-disabled);
-    }
-    .fir-input__root:focus-visible {
-        border: var(--fir-input-border-focus);
-        outline: none;
-    }
-    .fir-input__root.fir-input__root_error {
-        border: var(--fir-input-border-error);
-    }
-    .fir-input__error {
-        margin-left: 4px;
-        color: var(--fir-global-text-error-color);
-        font-size: var(--fir-input-error-font-size);
-    }
+.fir-input__wrapper {
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    color: var(--fir-global-text-color);
+    font-family: var(--fir-global-font-family);
+}
+.fir-input__wrapper.fir-input__disabled {
+    color: var(--fir-global-text-disabled-color);
+}
+.fir-input__label {
+    margin-left: 4px;
+    font-size: var(--fir-input-label-font-size);
+}
+.fir-input__label.fir-input__label_error {
+    color: var(--fir-global-text-error-color);
+}
+.fir-input__root {
+    color: inherit;
+    border: var(--fir-input-border);
+    padding: var(--fir-input-padding);
+    font-size: var(--fir-input-font-size);
+    transition: var(--fir-global-duration);
+    border-radius: var(--fir-global-border-radius);
+}
+.fir-input__root::placeholder {
+    font-size: var(--fir-input-ph-font-size);
+}
+.fir-input__root:hover {
+    border: var(--fir-input-border-hover);
+}
+.fir-input__root:disabled {
+    border: var(--fir-input-border-disabled);
+}
+.fir-input__root:focus-visible {
+    border: var(--fir-input-border-focus);
+    outline: none;
+}
+.fir-input__root.fir-input__root_error {
+    border: var(--fir-input-border-error);
+}
+.fir-input__error {
+    margin-left: 4px;
+    color: var(--fir-global-text-error-color);
+    font-size: var(--fir-input-error-font-size);
+}
 </style>

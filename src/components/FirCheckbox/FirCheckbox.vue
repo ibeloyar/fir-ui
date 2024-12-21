@@ -52,7 +52,7 @@ const model = defineModel();
     cursor: pointer;
 }
 .fir-checkbox__root:checked::before {
-    background-color: var(--fir-color-primary);
+    background-color: var(--fir-c-primary);
 }
 .fir-checkbox__root:disabled::before {
     border-color: var(--fir-checkbox-border-color-disabled);
@@ -81,9 +81,11 @@ const model = defineModel();
     cursor: default;
 }
 .fir-checkbox__label {
+    cursor: pointer;
     padding-left: 24px;
     color: var(--fir-global-text-color);
-    cursor: pointer;
+    font-family: var(--fir-global-font-family);
+    font-size: var(--fir-global-font-size-medium);
 }
 .fir-checkbox__label.fir-checkbox__label_disabled {
     color: var(--fir-global-text-disabled-color);

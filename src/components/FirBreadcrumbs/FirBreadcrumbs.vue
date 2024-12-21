@@ -8,10 +8,10 @@ const props = defineProps<FirBreadcrumbsProps>();
 <template>
     <div class="fir-breadcrumbs"> 
         <span 
-            class="fir-breadcrumbs__item"
-            v-for="item in props.list" 
             :key="item.name"
             @click="item.onClick"
+            v-for="item in props.list" 
+            class="fir-breadcrumbs__item"
         >
             <span class="fir-breadcrumbs__slash">/</span>
             <span 
@@ -31,7 +31,7 @@ const props = defineProps<FirBreadcrumbsProps>();
     display: flex;
     align-items: center;
     font-family: var(--fir-global-font-family);
-    font-size: var(--fir-global-font-size-medium);
+    font-size: var(--fir-global-font-size-small);
     color: var(--fir-global-text-disabled-color);
 }
 .fir-breadcrumbs__item {
@@ -54,6 +54,6 @@ const props = defineProps<FirBreadcrumbsProps>();
     margin-right: 4px;
 }
 .fir-breadcrumbs__text_active:hover {
-    color: var(--fir-color-primary);
+    color: var(--fir-c-primary);
 }
 </style>
