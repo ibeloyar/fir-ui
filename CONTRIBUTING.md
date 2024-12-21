@@ -1,4 +1,8 @@
-## In project used git flow
+# For contributors
+
+TODO...
+
+### In project used git flow
 
 Main branch name for production releases: main<br/>
 Branch name for "next release" development: dev<br/>
