@@ -14,13 +14,13 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [x] Checkbox
 - [x] Chip
 - [x] IconButton
-- [ ] InputText
+- [x] InputText
 - [ ] InputPassword
 - [x] Modal
 - [ ] Popper
-- [ ] Search
 - [ ] Select
 - [ ] Switch
+- [ ] TextArea
 
 **Env:**
 - [x] Colors
