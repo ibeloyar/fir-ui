@@ -7,21 +7,21 @@ A simple set of components for prototypes and small own projects on Vue 3.
 
 ### For MVP (v.2.0) needs:
 **Components:**<br/>
-- [ ] Accordion
+- [x] Accordion
 - [ ] Autocomplete
 - [x] Breadcrumbs
 - [x] Button
-- [ ] Checkbox
-- [ ] Chip
-- [ ] IconButton
-- [ ] InputText
+- [x] Checkbox
+- [x] Chip
+- [x] IconButton
+- [x] InputText
 - [ ] InputPassword
 - [x] Modal
 - [ ] Popper
-- [ ] Search
 - [ ] Select
 - [ ] Switch
+- [ ] TextArea
 
 **Env:**
-- [ ] Colors
-- [ ] Font
+- [x] Colors
+- [x] Font

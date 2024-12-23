@@ -8,12 +8,20 @@ const props = defineProps<FirBreadcrumbsProps>();
 <template>
     <div class="fir-breadcrumbs"> 
         <span 
-            v-for="item in props.list" 
             :key="item.name"
             @click="item.onClick"
+            v-for="item in props.list" 
+            class="fir-breadcrumbs__item"
         >
             <span class="fir-breadcrumbs__slash">/</span>
-            <span :class="{ 'fir-breadcrumbs__text': true, 'fir-breadcrumbs__text_active': !!item.onClick }">{{ item.name }}</span>
+            <span 
+                :class="{
+                    'fir-breadcrumbs__text': true, 
+                    'fir-breadcrumbs__text_active': !!item.onClick 
+                }"
+            >
+                {{ item.name }}
+            </span>
         </span>
     </div>
 </template>
@@ -21,8 +29,15 @@ const props = defineProps<FirBreadcrumbsProps>();
 <style scoped>
 .fir-breadcrumbs {
     display: flex;
+    align-items: center;
+    font-family: var(--fir-global-font-family);
+    font-size: var(--fir-global-font-size-small);
     color: var(--fir-global-text-disabled-color);
-    font-size: var(--fir-global-font-size-medium);
+}
+.fir-breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
 }
 .fir-breadcrumbs__text {    
     display: inline-block;
@@ -39,6 +54,6 @@ const props = defineProps<FirBreadcrumbsProps>();
     margin-right: 4px;
 }
 .fir-breadcrumbs__text_active:hover {
-    color: var(--fir-color-primary);
+    color: var(--fir-c-primary);
 }
 </style>

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import FirInput from './FirInput.vue';
-import type { FirInputProps } from './FirInput.types.ts';
+import FirInputText from './FirInputText.vue';
+import type { FirInputTextProps } from './FirInputText.types.ts';
 
 const meta = {
-    title: 'Components/FirInput',
-    component: FirInput,
+    title: 'Components/FirInputText',
+    component: FirInputText,
     tags: ['autodocs'],
     argTypes: {
         value: { control: 'text', description: 'Input value', type: 'string' },
@@ -16,7 +16,7 @@ const meta = {
  	args: {
 
     },
-} satisfies Meta<FirInputProps>;
+} satisfies Meta<FirInputTextProps>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
