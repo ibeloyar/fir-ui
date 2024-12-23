@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test';
+// import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import FirPopper from './FirPopper.vue';
@@ -29,6 +29,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { 
     args: {
+        type: 'default',
         ancor: 'Ref',
         content: 'Text content'
     },
@@ -40,4 +41,38 @@ export const Click: Story = {
         ancor: 'Ref',
         content: 'Text content'
     },
+};
+
+export const TwoPopper: Story = { 
+    args: {
+        type: 'click',
+        ancor: 'Ref',
+        content: 'Text content'
+    },
+    render: () => ({
+        components: { FirPopper },
+        template: `
+        <div style="display: flex; gap: 8px;">
+
+        <FirPopper>
+            <template v-slot:ancor>
+                Popper 1
+            </template>
+            <template v-slot:content>  
+                Popper 1 content
+            </template>
+        </FirPopper>
+
+        <FirPopper>
+            <template v-slot:ancor>  
+                Popper 2
+            </template>
+            <template v-slot:content>  
+                Popper 2 content
+            </template>
+        </FirPopper>
+
+        </div>
+        `
+    }),
 };
