@@ -94,15 +94,17 @@ onUnmounted(() => {
 .fir-popper__ancor {
     padding: 4px;
     cursor: default;
-    display: inline-block;
+    display: block;
 }
 .fir-popper__content {
     position: absolute;
-    padding: 4px;
-    background-color: lightgray;
+    background-color: transparent;
     visibility: visible;
+    transition: 0.2s;
+    opacity: 1;
 }
 .hidden {
+    opacity: 0;
     visibility: hidden;
 }
 </style>
