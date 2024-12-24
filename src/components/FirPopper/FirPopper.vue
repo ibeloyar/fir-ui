@@ -143,7 +143,7 @@ onBeforeUnmount(() => {
 
 <style>
 .fir-popper__wrapper {
-    width: 100%;
+    /* width: 100%; */
 }
 .fir-popper__ancor {
     padding: 4px;
