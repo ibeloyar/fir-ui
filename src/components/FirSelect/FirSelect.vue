@@ -3,14 +3,12 @@ import FirPopper from '../FirPopper/FirPopper.vue';
 import FirInputText from '../FirInputText/FirInputText.vue';
 
 import type { FirSelectProps } from './FirSelect.types';
-import { ref } from 'vue';
 
 withDefaults(defineProps<FirSelectProps>(), {
     value: '',
 });
 
-
-const onSelectItem = (value: any) => {
+const onSelectItem = (value) => {
     console.log(value);
 };
 </script>
