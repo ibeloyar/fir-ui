@@ -1,48 +1,69 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue';
-import { FirPopperProps } from './FirPopper.types';
+import { onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
+
+import type { FirPopperProps } from './FirPopper.types';
 
 const ANCOR_ID = 'fir-popper__ancor_id';
 const WRAPPER_ID = 'fir-popper__wrapper_id';
 const CONTENT_ID = 'fir-popper__content_id';
 
+const ancor = useTemplateRef('ancor-ref');
+const content = useTemplateRef('content-ref');
+const wrapper = useTemplateRef('wrapper-ref');
+
 const props = withDefaults(defineProps<FirPopperProps>(), {
-    type: 'default'
+    type: 'default',
 });
 
 const isOpen = ref(false);
+const contentWidth = ref(null);
 
-const onMouseEnter = (e) => {
+// FOCUS
+const onAncorFocusIn = () => {
+    if (props.type === 'click') return;
+    
+    isOpen.value = true;
+};
+
+const onAncorFocusOut = () => {
     if (props.type === 'click') return;
 
-    if (e.toElement.id === ANCOR_ID) {
-        openDefault();
-    }
+    isOpen.value = false;
+};
+
+// MOUSE ENTER/LEAVE
+const onAncorMouseEnter = () => {
+    if (props.type === 'click') return;
+    
+    isOpen.value = true;
 
     renderContent();
 };
 
-const onMouseLeave = (e) => {
+const onAncorMouseLeave = (e) => {
     if (props.type === 'click') return;
+
+    if (e.toElement.parentElement.id !== CONTENT_ID && e.toElement.id !== CONTENT_ID) {
+        isOpen.value = false;
+    } 
+};
+
+const onMouseContentLeave = (e) => {
+    if (props.type === 'click') return;
+
+    if (!e.toElement) return;
+
     if (e.toElement.id === CONTENT_ID ) {
         return;
     }
-    closeDefault();
-};
 
-const openDefault = () => {
-    if (props.type === 'click') return;
-    isOpen.value = true;
-};
-
-const closeDefault = () => {
-    if (props.type === 'click') return;
     isOpen.value = false;
+    removeContentFromBody();
 };
 
+// CLICK
 const onClick = () => {
     if (props.type === 'default') return;
-
     if (!isOpen.value) {
         isOpen.value = true;
         renderContent();
@@ -52,11 +73,21 @@ const onClick = () => {
     }
 };
 
-const ancor = useTemplateRef('ancor-ref');
-const content = useTemplateRef('content-ref');
-const wrapper = useTemplateRef('wrapper-ref');
+
+const onEnterPress = () => {
+    if (props.type === 'default') return;
+    if (!isOpen.value) {
+        isOpen.value = true;
+        renderContent();
+    } else {
+        isOpen.value = false;
+        removeContentFromBody();
+    }
+};
 
 const renderContent = () => {
+    contentWidth.value = ancor.value.clientWidth - 18;
+
     if (ancor.value && content.value) {
         const rect = ancor.value.getBoundingClientRect();
 
@@ -72,39 +103,38 @@ const removeContentFromBody = () => {
     wrapper.value.appendChild(content.value);
 };
 
-// onUnmounted(() => {
-//     const elements = document.body.getElementsByClassName('fir-popper__content');
-//     const elementsLength = elements.length;
+onMounted(() => {
+    contentWidth.value = ancor.value.clientWidth - 10;
+});
 
-//     if (elementsLength > 0) {
-//         for (let i = 0; i < elementsLength; i++) {
-//             elements?.[i]?.remove?.();
-//         }
-//     }
-// });
+onBeforeUnmount(() => {
+    removeContentFromBody();
+});
 </script>
 
-
 <template>
-    <div class="fir-popper__wrapper" @mouseleave="onMouseLeave" :id="WRAPPER_ID" ref="wrapper-ref">
+    <div class="fir-popper__wrapper" :id="WRAPPER_ID" ref="wrapper-ref">
         <div 
+            class="fir-popper__ancor"
             tabindex="0"
+            ref="ancor-ref"
             :id="ANCOR_ID"
             @click="onClick"
-            @focus="openDefault"
-            @focusout="closeDefault"
-            @mouseenter="onMouseEnter"
-            class="fir-popper__ancor"
-            ref="ancor-ref"
+            @focus="onAncorFocusIn"
+            @focusout="onAncorFocusOut"
+            @mouseenter="onAncorMouseEnter" 
+            @mouseleave="onAncorMouseLeave"
+            @keypress.enter="onEnterPress"
         >
             <slot name="ancor"></slot>
         </div>
         <div
-            :id="CONTENT_ID"
-            @mouseleave="onMouseLeave"
-            v-show="isOpen"
-            :class="{ 'fir-popper__content': true }"
             ref="content-ref"
+            class="fir-popper__content"
+            v-show="isOpen"
+            :id="CONTENT_ID"
+            :style="{ width: contentWidth + 'px' }"
+            @mouseleave="onMouseContentLeave"
         >
             <slot name="content"></slot> 
         </div>
@@ -113,14 +143,14 @@ const removeContentFromBody = () => {
 
 <style>
 .fir-popper__wrapper {
-    display: inline;
+    width: 100%;
 }
 .fir-popper__ancor {
     padding: 4px;
     cursor: default;
-    display: block;
+    display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 4px;
 }
 .fir-popper__content {
     position: absolute;
