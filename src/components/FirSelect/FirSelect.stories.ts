@@ -31,3 +31,20 @@ export const Default: Story = {
         options: [],
     },
 };
+
+export const TwoSelect: Story = { 
+    args: {
+        options: []
+    },
+    render: () => ({
+        components: { FirSelect },
+        template: `
+        <div style="display: flex; gap: 8px;">
+
+        <FirSelect value="" options="[]"/>
+        <FirSelect value="" options="[]"/>
+
+        </div>
+        `
+    }),
+};

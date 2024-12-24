@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onUnmounted, ref } from 'vue';
+import { ref, useTemplateRef } from 'vue';
 import { FirPopperProps } from './FirPopper.types';
 
 const ANCOR_ID = 'fir-popper__ancor_id';
+const WRAPPER_ID = 'fir-popper__wrapper_id';
 const CONTENT_ID = 'fir-popper__content_id';
 
 const props = withDefaults(defineProps<FirPopperProps>(), {
@@ -12,23 +13,17 @@ const props = withDefaults(defineProps<FirPopperProps>(), {
 const isOpen = ref(false);
 
 const onMouseEnter = (e) => {
+    if (props.type === 'click') return;
+
     if (e.toElement.id === ANCOR_ID) {
         openDefault();
     }
 
-    const elem = document.getElementById(CONTENT_ID);
-    if (elem) {
-        const rect = elem.getBoundingClientRect();
-
-        elem.style.left = rect.x + 'px';
-        elem.style.top = rect.y + 'px';
-
-        document.body.style.position = 'relative';
-        document.body.appendChild(elem);
-    }
+    renderContent();
 };
 
 const onMouseLeave = (e) => {
+    if (props.type === 'click') return;
     if (e.toElement.id === CONTENT_ID ) {
         return;
     }
@@ -47,24 +42,51 @@ const closeDefault = () => {
 
 const onClick = () => {
     if (props.type === 'default') return;
-    isOpen.value = !isOpen.value;
+
+    if (!isOpen.value) {
+        isOpen.value = true;
+        renderContent();
+    } else {
+        isOpen.value = false;
+        removeContentFromBody();
+    }
 };
 
-onUnmounted(() => {
-    const elements = document.body.getElementsByClassName('fir-popper__content');
-    const elementsLength = elements.length;
+const ancor = useTemplateRef('ancor-ref');
+const content = useTemplateRef('content-ref');
+const wrapper = useTemplateRef('wrapper-ref');
 
-    if (elementsLength > 0) {
-        for (let i = 0; i < elementsLength; i++) {
-            elements?.[i]?.remove?.();
-        }
+const renderContent = () => {
+    if (ancor.value && content.value) {
+        const rect = ancor.value.getBoundingClientRect();
+
+        content.value.style.left = rect.x + window.scrollX + 'px';
+        content.value.style.top = rect.y + window.scrollY + rect.height + 'px';
+
+        document.body.style.position = 'relative';
+        document.body.appendChild(content.value);
     }
-});
+};
+
+const removeContentFromBody = () => {
+    wrapper.value.appendChild(content.value);
+};
+
+// onUnmounted(() => {
+//     const elements = document.body.getElementsByClassName('fir-popper__content');
+//     const elementsLength = elements.length;
+
+//     if (elementsLength > 0) {
+//         for (let i = 0; i < elementsLength; i++) {
+//             elements?.[i]?.remove?.();
+//         }
+//     }
+// });
 </script>
 
 
 <template>
-    <div class="fir-popper__wrapper" @mouseleave="onMouseLeave">
+    <div class="fir-popper__wrapper" @mouseleave="onMouseLeave" :id="WRAPPER_ID" ref="wrapper-ref">
         <div 
             tabindex="0"
             :id="ANCOR_ID"
@@ -73,14 +95,16 @@ onUnmounted(() => {
             @focusout="closeDefault"
             @mouseenter="onMouseEnter"
             class="fir-popper__ancor"
+            ref="ancor-ref"
         >
             <slot name="ancor"></slot>
         </div>
         <div
             :id="CONTENT_ID"
-            ref="content-ref"
             @mouseleave="onMouseLeave"
-            :class="{ 'fir-popper__content': true, 'hidden': !isOpen }"
+            v-show="isOpen"
+            :class="{ 'fir-popper__content': true }"
+            ref="content-ref"
         >
             <slot name="content"></slot> 
         </div>
@@ -95,6 +119,8 @@ onUnmounted(() => {
     padding: 4px;
     cursor: default;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 .fir-popper__content {
     position: absolute;

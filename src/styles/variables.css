@@ -62,8 +62,6 @@
     /* Other */
     --fir-global-duration: .25s;
 
-
-
     /* Borders */
     --fir-global-border-color: var(--fir-c-gray-light-1);
     --fir-global-border-color-hover: var(--fir-c-gray-dark-1);
@@ -109,8 +107,11 @@
     --fir-input-text-ph-font-size : 13px;
 
     /* Modal */
-    --fir-modal-bg-color: var(--fir-c-white-mute);
+    --fir-modal-bg-color: var(--fir-c-white);
     --fir-modal-padding: 24px;
     --fir-modal-wrapper-bg-color: var(--fir-c-transparent);
     --fir-modal-border-radius: var(--fir-global-border-radius);
+
+    /* Select */
+    --fir-select-bg-color: var(--fir-c-white);
 }

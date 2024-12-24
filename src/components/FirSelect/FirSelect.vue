@@ -4,29 +4,37 @@ import FirInputText from '../FirInputText/FirInputText.vue';
 
 import type { FirSelectProps } from './FirSelect.types';
 
-const props = withDefaults(defineProps<FirSelectProps>(), {
+withDefaults(defineProps<FirSelectProps>(), {
     value: '',
 });
 
-console.log(props);
 </script>
 
 
 <template>
-    <FirPopper type="default">
+    <FirPopper type="click">
         <template v-slot:ancor>    
             <FirInputText readonly/>
         </template>
         <template v-slot:content>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+            <ul class="fir-select__list">
+                <li class="fir-select__list_option">1</li>
             </ul>
         </template>
     </FirPopper>
 </template>
 
 <style>
-
+.fir-select__list {
+    background-color: var(--fir-select-bg-color);
+    border: 1px solid var(--fir-global-border-color);
+    border-radius: var(--fir-global-border-radius);
+    width: 300px;
+    margin: 0;
+    padding: 12px 0px 12px 4px;
+    margin-top: 4px;
+}
+.fir-select__list_option {
+    list-style: none;
+}
 </style>
