@@ -43,6 +43,7 @@
     --fir-c-orange-30: #FCD6BB;
     --fir-c-orange-10: #FEF1E8;
     --fir-c-orange-90: #6D523F;
+    --fir-c-transparent-dark: rgba(0, 0, 0, 0.7);
     --fir-c-transparent: rgba(0, 0, 0, 0.3);
     --fir-c-transparent-light: rgba(0, 0, 0, 0.15);
 
@@ -52,6 +53,7 @@
     --fir-global-font-size-medium: 14px;
     --fir-global-font-size-large: 18px;
     --fir-global-text-color: var(--fir-c-black-soft);
+    --fir-global-reverse-text-color: var(--fir-c-white-soft);
     --fir-global-text-disabled-color: var(--fir-c-gray-light-1);
     --fir-global-text-error-color: var(--fir-c-red);
 
@@ -60,6 +62,7 @@
     --fir-global-inputs-padding: 4px;
 
     /* Other */
+    --fir-global-bg-color: var(--fir-c-white);
     --fir-global-duration: .25s;
 
     /* Borders */
@@ -114,4 +117,9 @@
 
     /* Select */
     --fir-select-bg-color: var(--fir-c-white);
+
+    /* Tooltip */
+    --fir-tooltip-max-width: 300px;
+    --fir-tooltip-min-width: 80px;
+    --fir-tooltip-font-size: var(--fir-global-font-size-small);
 }

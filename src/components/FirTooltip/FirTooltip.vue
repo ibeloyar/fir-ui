@@ -26,11 +26,11 @@ const props = withDefaults(defineProps<FirTooltipProps>(), {
 <style>
 .fir-tooltip__text {
     font-family: var(--fir-global-font-family);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    max-width: 300px;
-    min-width: 80px;
-    font-size: 12px;
+    background-color: var(--fir-c-transparent-dark);
+    color: var(--fir-global-reverse-text-color);
+    max-width: var(--fir-tooltip-max-width);
+    min-width: var(--fir-tooltip-min-width);
+    font-size: var(--fir-tooltip-font-size);
     padding: 4px;
     border-radius: var(--fir-global-border-radius);
 }
