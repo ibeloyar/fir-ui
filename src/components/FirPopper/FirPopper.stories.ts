@@ -9,11 +9,15 @@ const meta = {
     component: FirPopper,
     tags: ['autodocs'],
     argTypes: {
-        type: { type: 'string', description: 'Opening type', control: 'select', options: ['default', 'click'] }
+        type: { type: 'string', description: 'Opening type', control: 'select', options: ['default', 'click'] },
+        position: { 
+            type: 'string', 
+            description: 'Position popper with content', 
+            control: 'select', 
+            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth'] 
+        }
     },
-    args: {
-        // onClose: fn(),
-    },
+    args: {},
     parameters: {
         slots: {
             ancor: {
@@ -30,8 +34,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = { 
     args: {
         type: 'default',
-        ancor: 'Ref',
-        content: 'Text content'
+        ancor: 'Referense text',
+        content: 'Content text'
     },
 };
 
@@ -54,7 +58,7 @@ export const TwoPopper: Story = {
         template: `
         <div style="display: flex; gap: 8px;">
 
-        <FirPopper>
+        <FirPopper type="default">
             <template v-slot:ancor>
                 Popper 1
             </template>
@@ -63,7 +67,7 @@ export const TwoPopper: Story = {
             </template>
         </FirPopper>
 
-        <FirPopper>
+        <FirPopper type="default">
             <template v-slot:ancor>  
                 Popper 2
             </template>

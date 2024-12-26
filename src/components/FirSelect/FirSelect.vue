@@ -15,7 +15,7 @@ const onSelectItem = (value) => {
 
 
 <template>
-    <FirPopper type="click">
+    <FirPopper type="click" position="bottom-start">
         <template v-slot:ancor>    
             <FirInputText ref='input-ref' readonly/>
         </template>

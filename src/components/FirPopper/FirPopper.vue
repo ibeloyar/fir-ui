@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
+import { onBeforeUnmount, ref, useTemplateRef } from 'vue';
 
 import type { FirPopperProps } from './FirPopper.types';
 
-const ANCOR_ID = 'fir-popper__ancor_id';
-const WRAPPER_ID = 'fir-popper__wrapper_id';
 const CONTENT_ID = 'fir-popper__content_id';
 
 const ancor = useTemplateRef('ancor-ref');
@@ -13,25 +11,29 @@ const wrapper = useTemplateRef('wrapper-ref');
 
 const props = withDefaults(defineProps<FirPopperProps>(), {
     type: 'default',
+    position: 'bottom',
 });
 
 const isOpen = ref(false);
-const contentWidth = ref(null);
 
-// FOCUS
+// focus handle
 const onAncorFocusIn = () => {
     if (props.type === 'click') return;
     
     isOpen.value = true;
+
+    renderContent();
 };
 
 const onAncorFocusOut = () => {
     if (props.type === 'click') return;
 
     isOpen.value = false;
+
+    removeContentFromBody();
 };
 
-// MOUSE ENTER/LEAVE
+// mouse enter/leave handle 
 const onAncorMouseEnter = () => {
     if (props.type === 'click') return;
     
@@ -45,7 +47,8 @@ const onAncorMouseLeave = (e) => {
 
     if (e.toElement.parentElement.id !== CONTENT_ID && e.toElement.id !== CONTENT_ID) {
         isOpen.value = false;
-    } 
+        removeContentFromBody();
+    }
 };
 
 const onMouseContentLeave = (e) => {
@@ -61,7 +64,7 @@ const onMouseContentLeave = (e) => {
     removeContentFromBody();
 };
 
-// CLICK
+// click handle
 const onClick = () => {
     if (props.type === 'default') return;
     if (!isOpen.value) {
@@ -72,7 +75,6 @@ const onClick = () => {
         removeContentFromBody();
     }
 };
-
 
 const onEnterPress = () => {
     if (props.type === 'default') return;
@@ -86,13 +88,50 @@ const onEnterPress = () => {
 };
 
 const renderContent = () => {
-    contentWidth.value = ancor.value.clientWidth - 18;
-
     if (ancor.value && content.value) {
-        const rect = ancor.value.getBoundingClientRect();
+        const rectAncor = ancor.value.getBoundingClientRect();
+        const rectContent = content.value.getBoundingClientRect();
 
-        content.value.style.left = rect.x + window.scrollX + 'px';
-        content.value.style.top = rect.y + window.scrollY + rect.height + 'px';
+        let xOffset = 0;
+        let yOffset = 0;
+
+        switch (props.position) {
+        case 'left':
+            yOffset = rectAncor.height / 2 - rectContent.height / 2;
+            xOffset = -rectContent.width;
+            break;
+        case 'rigth':
+            yOffset = rectAncor.height / 2 - rectContent.height / 2;
+            xOffset = rectAncor.width;
+            break;
+        case 'top':
+            yOffset = -(content.value.clientHeight);
+            xOffset = rectAncor.width / 2 - rectContent.width / 2;
+            break;
+        case 'top-end':
+            yOffset = -(content.value.clientHeight);
+            xOffset = rectAncor.width - rectContent.width;
+            break;
+        case 'top-start':
+            yOffset = -(content.value.clientHeight);
+            xOffset = 0;
+            break;
+        case 'bottom-start':
+            yOffset = rectAncor.height;
+            xOffset = 0;
+            break;
+        case 'bottom-end':
+            yOffset = rectAncor.height;
+            xOffset = rectAncor.width - rectContent.width;
+            break;
+        case 'bottom':
+        default: 
+            yOffset = rectAncor.height;
+            xOffset = rectAncor.width / 2 - rectContent.width / 2;
+        }
+
+        content.value.style.left = rectAncor.x + window.scrollX + xOffset + 'px';
+        content.value.style.top = rectAncor.y + window.scrollY + yOffset + 'px';
 
         document.body.style.position = 'relative';
         document.body.appendChild(content.value);
@@ -103,37 +142,30 @@ const removeContentFromBody = () => {
     wrapper.value.appendChild(content.value);
 };
 
-onMounted(() => {
-    contentWidth.value = ancor.value.clientWidth - 10;
-});
-
 onBeforeUnmount(() => {
     removeContentFromBody();
 });
 </script>
 
 <template>
-    <div class="fir-popper__wrapper" :id="WRAPPER_ID" ref="wrapper-ref">
+    <div ref="wrapper-ref" class="fir-popper__wrapper">
         <div 
-            class="fir-popper__ancor"
             tabindex="0"
             ref="ancor-ref"
-            :id="ANCOR_ID"
+            class="fir-popper__ancor"
             @click="onClick"
             @focus="onAncorFocusIn"
             @focusout="onAncorFocusOut"
+            @keypress.enter="onEnterPress"
             @mouseenter="onAncorMouseEnter" 
             @mouseleave="onAncorMouseLeave"
-            @keypress.enter="onEnterPress"
         >
             <slot name="ancor"></slot>
         </div>
         <div
             ref="content-ref"
-            class="fir-popper__content"
-            v-show="isOpen"
             :id="CONTENT_ID"
-            :style="{ width: contentWidth + 'px' }"
+            :class="{'fir-popper__content': true, hidden: !isOpen }"
             @mouseleave="onMouseContentLeave"
         >
             <slot name="content"></slot> 
@@ -143,20 +175,17 @@ onBeforeUnmount(() => {
 
 <style>
 .fir-popper__wrapper {
-    /* width: 100%; */
+    position: relative;
 }
 .fir-popper__ancor {
-    padding: 4px;
     cursor: default;
     display: inline-block;
     margin: 0;
-    padding: 4px;
 }
 .fir-popper__content {
     position: absolute;
     background-color: transparent;
     visibility: visible;
-    transition: 0.2s;
     opacity: 1;
 }
 .hidden {

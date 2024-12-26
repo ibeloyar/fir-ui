@@ -5,13 +5,14 @@ import type { FirTooltipProps } from './FirTooltip.types';
 
 const props = withDefaults(defineProps<FirTooltipProps>(), {
     text: '',
+    popperPosition: 'bottom',
 });
 
 </script>
 
 
 <template>
-    <FirPopper type="default">
+    <FirPopper type="default" :position="props.popperPosition">
         <template v-slot:ancor>
             <slot></slot>
         </template>
@@ -33,5 +34,6 @@ const props = withDefaults(defineProps<FirTooltipProps>(), {
     font-size: var(--fir-tooltip-font-size);
     padding: 4px;
     border-radius: var(--fir-global-border-radius);
+    white-space: pre-line;
 }
 </style>

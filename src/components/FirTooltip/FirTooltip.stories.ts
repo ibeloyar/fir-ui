@@ -8,7 +8,14 @@ const meta = {
     title: 'Components/FirTooltip',
     component: FirTooltip,
     tags: ['autodocs'],
-    argTypes: {},
+    argTypes: {
+        popperPosition: { 
+            type: 'string', 
+            description: 'Position popper with content', 
+            control: 'select', 
+            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth'] 
+        }
+    },
     args: {
         // onClose: fn(),
     },
@@ -27,7 +34,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { 
     args: {
-        text: 'foo bar tooltip text',
+        text: 'foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         default: 'Ref'
     },
 };
