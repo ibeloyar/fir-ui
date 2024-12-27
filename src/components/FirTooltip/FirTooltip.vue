@@ -5,7 +5,7 @@ import type { FirTooltipProps } from './FirTooltip.types';
 
 const props = withDefaults(defineProps<FirTooltipProps>(), {
     text: '',
-    popperPosition: 'bottom',
+    popperPosition: 'auto',
 });
 
 </script>

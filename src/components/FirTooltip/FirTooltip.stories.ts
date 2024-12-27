@@ -13,7 +13,7 @@ const meta = {
             type: 'string', 
             description: 'Position popper with content', 
             control: 'select', 
-            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth'] 
+            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth', 'auto'] 
         }
     },
     args: {
@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = { 
     args: {
         text: 'foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        default: 'Ref'
+        default: 'Ref',
     },
 };
 
@@ -46,10 +46,10 @@ export const TwoTooltip: Story = {
     render: () => ({
         components: { FirTooltip },
         template: `
-        <div style="display: flex; gap: 8px;">
+        <div style="display: flex; justify-content: space-between;">
 
-        <FirTooltip text="foo bar tooltip text">Ref</FirTooltip>
-        <FirTooltip text="foo bar tooltip text">Ref</FirTooltip>
+        <FirTooltip text="foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit">Ref</FirTooltip>
+        <FirTooltip text="foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit">Ref</FirTooltip>
 
         </div>
         `

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, ref, useTemplateRef } from 'vue';
+import { onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
 
 import type { FirPopperProps } from './FirPopper.types';
 
@@ -11,7 +11,7 @@ const wrapper = useTemplateRef('wrapper-ref');
 
 const props = withDefaults(defineProps<FirPopperProps>(), {
     type: 'default',
-    position: 'bottom',
+    position: 'auto',
 });
 
 const isOpen = ref(false);
@@ -96,6 +96,28 @@ const renderContent = () => {
         let yOffset = 0;
 
         switch (props.position) {
+        case 'auto':
+            // render priority -> bottom OR top |_ top-start OR top-end
+            //                                  |_ bottom-star OR bottom-end, 
+            
+            yOffset = rectAncor.height;
+
+            // on Y
+            if (window.innerHeight < rectAncor.y + rectAncor.height + rectContent.height) {
+                yOffset = -(content.value.clientHeight);
+            }
+
+            // on X
+            if (window.innerWidth < rectContent.right) {
+                xOffset = -rectContent.width;
+                break;
+            }
+            if (rectContent.left < window.screenX) {
+                xOffset = 0;
+                break;
+            }
+
+            break;
         case 'left':
             yOffset = rectAncor.height / 2 - rectContent.height / 2;
             xOffset = -rectContent.width;
@@ -142,7 +164,26 @@ const removeContentFromBody = () => {
     wrapper.value.appendChild(content.value);
 };
 
+const scrollListener = () => {
+    if (isOpen.value) {
+        renderContent();
+    }
+};
+
+const resizeListener = () => {
+    if (isOpen.value) {
+        renderContent();
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', scrollListener);
+    window.addEventListener('resize', resizeListener);
+});
+
 onBeforeUnmount(() => {
+    window.removeEventListener('scroll', scrollListener);
+    window.removeEventListener('resize', resizeListener);
     removeContentFromBody();
 });
 </script>

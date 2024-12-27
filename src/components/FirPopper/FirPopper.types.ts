@@ -1,7 +1,7 @@
 export type PopperPosition =
 | 'bottom' | 'bottom-start' | 'bottom-end' 
 | 'top' | 'top-end' | 'top-start' 
-| 'left' | 'rigth';
+| 'left' | 'rigth' | 'auto';
 
 export interface FirPopperProps {
     type: 'default' | 'click';

@@ -14,7 +14,7 @@ const meta = {
             type: 'string', 
             description: 'Position popper with content', 
             control: 'select', 
-            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth'] 
+            options: ['bottom', 'bottom-start', 'bottom-end', 'top', 'top-end', 'top-start', 'left', 'rigth', 'auto'] 
         }
     },
     args: {},
