@@ -114,7 +114,6 @@ const renderContent = () => {
             }
             if (rectContent.left < window.screenX) {
                 xOffset = 0;
-                console.log('left');
                 break;
             }
 
@@ -156,8 +155,8 @@ const renderContent = () => {
         content.value.style.left = rectAncor.x + window.scrollX + xOffset + 'px';
         content.value.style.top = rectAncor.y + window.scrollY + yOffset + 'px';
 
-        document.body.style.position = 'relative';
-        document.body.appendChild(content.value);
+        window.document.body.style.position = 'relative';
+        window.document.body.appendChild(content.value);
     }
 };
 
@@ -168,12 +167,14 @@ const removeContentFromBody = () => {
 };
 
 const scrollListener = () => {
+    removeContentFromBody();
     if (isOpen.value) {
         renderContent();
     }
 };
 
 const resizeListener = () => {
+    removeContentFromBody();
     if (isOpen.value) {
         renderContent();
     }

@@ -17,7 +17,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [x] InputText
 - [ ] InputPassword
 - [x] Modal
-- [ ] Popper
+- [x] Popper
 - [ ] Select
 - [ ] Switch
 - [ ] TextArea
