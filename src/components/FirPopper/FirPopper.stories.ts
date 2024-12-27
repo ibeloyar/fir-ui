@@ -80,3 +80,30 @@ export const TwoPopper: Story = {
         `
     }),
 };
+
+export const EndPopper: Story = { 
+    args: {
+        type: 'click',
+        ancor: 'Ref',
+        content: 'Text content'
+    },
+    render: () => ({
+        components: { FirPopper },
+        template: `
+        <div style="display: flex; justify-content: space-between;">
+
+        <div></div>
+
+        <FirPopper type="click">
+            <template v-slot:ancor>  
+                Popper 2
+            </template>
+            <template v-slot:content>  
+                Popper 2 content
+            </template>
+        </FirPopper>
+
+        </div>
+        `
+    }),
+};

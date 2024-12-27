@@ -120,6 +120,5 @@
 
     /* Tooltip */
     --fir-tooltip-max-width: 300px;
-    --fir-tooltip-min-width: 80px;
     --fir-tooltip-font-size: var(--fir-global-font-size-small);
 }

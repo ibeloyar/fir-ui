@@ -49,7 +49,7 @@ export const TwoTooltip: Story = {
         <div style="display: flex; justify-content: space-between;">
 
         <FirTooltip text="foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit">Ref</FirTooltip>
-        <FirTooltip text="foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit">Ref</FirTooltip>
+        <FirTooltip text="foo bar \n tooltip text \n Lorem ipsum dolor sit amet, consectetur adipiscing elit">Ref2</FirTooltip>
 
         </div>
         `

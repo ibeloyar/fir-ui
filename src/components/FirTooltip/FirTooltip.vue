@@ -30,7 +30,6 @@ const props = withDefaults(defineProps<FirTooltipProps>(), {
     background-color: var(--fir-c-transparent-dark);
     color: var(--fir-global-reverse-text-color);
     max-width: var(--fir-tooltip-max-width);
-    min-width: var(--fir-tooltip-min-width);
     font-size: var(--fir-tooltip-font-size);
     padding: 4px;
     border-radius: var(--fir-global-border-radius);

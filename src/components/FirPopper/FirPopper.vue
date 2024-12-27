@@ -103,17 +103,18 @@ const renderContent = () => {
             yOffset = rectAncor.height;
 
             // on Y
-            if (window.innerHeight < rectAncor.y + rectAncor.height + rectContent.height) {
-                yOffset = -(content.value.clientHeight);
+            if (window.innerHeight < rectAncor.bottom + rectContent.height) {
+                yOffset = -content.value.clientHeight;
             }
 
             // on X
-            if (window.innerWidth < rectContent.right) {
-                xOffset = -rectContent.width;
+            if (window.innerWidth < rectContent.x + rectContent.width) {
+                xOffset = rectAncor.width - rectContent.width;
                 break;
             }
             if (rectContent.left < window.screenX) {
                 xOffset = 0;
+                console.log('left');
                 break;
             }
 
@@ -161,6 +162,8 @@ const renderContent = () => {
 };
 
 const removeContentFromBody = () => {
+    content.value.style.left = '0px';
+    content.value.style.top = ancor.value.clientHeight + 'px';
     wrapper.value.appendChild(content.value);
 };
 
