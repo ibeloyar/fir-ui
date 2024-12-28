@@ -64,6 +64,7 @@
     /* Other */
     --fir-global-bg-color: var(--fir-c-white);
     --fir-global-duration: .25s;
+    --fir-icon-fill-color: var(--fir-c-black-soft);
 
     /* Borders */
     --fir-global-border-color: var(--fir-c-gray-light-1);
