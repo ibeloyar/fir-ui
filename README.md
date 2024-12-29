@@ -15,7 +15,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [x] Chip
 - [x] IconButton
 - [x] InputText
-- [ ] InputPassword
+- [x] InputPassword
 - [x] Modal
 - [x] Popper
 - [ ] Select
