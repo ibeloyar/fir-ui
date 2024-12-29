@@ -99,16 +99,16 @@
     --fir-icon-button-bg-color-hover: var(--fir-c-transparent-light);
 
     /* Input */
-    --fir-input-text-font-size: var(--fir-global-font-size-medium);
-    --fir-input-text-label-font-size: var(--fir-global-font-size-small);
-    --fir-input-text-padding: 4px 8px;
-    --fir-input-text-border: 1px solid var(--fir-global-border-color);
-    --fir-input-text-border-hover: 1px solid var(--fir-global-border-color-hover);
-    --fir-input-text-border-focus: 1px solid var(--fir-global-border-color-focus);
-    --fir-input-text-border-disabled: 1px solid var(--fir-global-border-color-disabled);
-    --fir-input-text-border-error: 1px solid var(--fir-global-border-color-error);
-    --fir-input-text-error-font-size : var(--fir-global-font-size-small);
-    --fir-input-text-ph-font-size : 13px;
+    --fir-input-font-size: var(--fir-global-font-size-medium);
+    --fir-input-label-font-size: var(--fir-global-font-size-small);
+    --fir-input-padding: 4px 8px;
+    --fir-input-border: 1px solid var(--fir-global-border-color);
+    --fir-input-border-hover: 1px solid var(--fir-global-border-color-hover);
+    --fir-input-border-focus: 1px solid var(--fir-global-border-color-focus);
+    --fir-input-border-disabled: 1px solid var(--fir-global-border-color-disabled);
+    --fir-input-border-error: 1px solid var(--fir-global-border-color-error);
+    --fir-input-error-font-size : var(--fir-global-font-size-small);
+    --fir-input-ph-font-size : 13px;
 
     /* Modal */
     --fir-modal-bg-color: var(--fir-c-white);

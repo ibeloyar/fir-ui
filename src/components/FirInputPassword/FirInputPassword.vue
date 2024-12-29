@@ -19,27 +19,27 @@ const toggleIsHide = () => isHide.value = !isHide.value;
 
 <template>
     <label :class="{
-        'fir-input-text__wrapper': true,
-        'fir-input-text__disabled': $attrs.disabled,
+        'fir-input__wrapper': true,
+        'fir-input__disabled': $attrs.disabled,
     }">
         <span v-if="props.label" 
               :class="{
-                  'fir-input-text__label': true,
-                  'fir-input-text__label_error': props.error,
+                  'fir-input__label': true,
+                  'fir-input__label_error': props.error,
               }">
             {{ props.label }}
         </span>
-        <div class="fir-input-text__input">
+        <div class="fir-input__input">
             <input
                 :class="{
-                    'fir-input-text__root': true,
-                    'fir-input-text__root_error': !!props.error,
+                    'fir-input__root': true,
+                    'fir-input__root_error': !!props.error,
                 }"
                 v-bind="$attrs"
                 v-model="model"
                 :type="isHide ? 'password' : 'text'"
             />
-            <button :disabled="!!$attrs.disabled" class="fir-input-password__input_eye" @click="toggleIsHide">
+            <button :disabled="!!$attrs.disabled" class="fir-input__input_eye" @click="toggleIsHide">
                 <slot name="show-icon">
                     <FirEye v-show="!isHide" />
                 </slot>
@@ -48,33 +48,33 @@ const toggleIsHide = () => isHide.value = !isHide.value;
                 </slot>
             </button>
         </div>
-        <span v-if="props.error" class="fir-input-text__error">{{ props.error }}</span>
+        <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
     </label>
 </template>
 
 <style>
-.fir-input-text__wrapper {
+.fir-input__wrapper {
     gap: 2px;
     display: flex;
     flex-direction: column;
     color: var(--fir-global-text-color);
     font-family: var(--fir-global-font-family);
 }
-.fir-input-text__wrapper.fir-input-text__disabled {
+.fir-input__wrapper.fir-input-password__disabled {
     color: var(--fir-global-text-disabled-color);
 }
-.fir-input-text__label {
+.fir-input__label {
     margin-left: 4px;
-    font-size: var(--fir-input-text-label-font-size);
+    font-size: var(--fir-input-label-font-size);
 }
-.fir-input-text__label.fir-input-text__label_error {
+.fir-input__label.fir-input-password__label_error {
     color: var(--fir-global-text-error-color);
 }
-.fir-input-text__input {
+.fir-input__input {
     position: relative;
     width: 100%;
 }
-.fir-input-password__input_eye {
+.fir-input__input_eye {
     position: absolute;
     right: 8px;
     top: calc(50% - 10px);
@@ -85,56 +85,56 @@ const toggleIsHide = () => isHide.value = !isHide.value;
     height: 24px;
     width: 24px;
 }
-.fir-input-password__input_eye:disabled {
+.fir-input__input_eye:disabled {
     outline: none;
     path {
         stroke: var(--fir-global-border-color-disabled);
     }
 }
-.fir-input-password__input_eye:disabled:hover {
+.fir-input__input_eye:disabled:hover {
     outline: none;
     path {
         stroke: var(--fir-global-border-color-disabled);
     }
 }
-.fir-input-password__input_eye:focus,
-.fir-input-password__input_eye:focus-visible,
-.fir-input-password__input_eye:hover {
+.fir-input__input_eye:focus,
+.fir-input__input_eye:focus-visible,
+.fir-input__input_eye:hover {
     outline: none;    
     path {
         stroke: var(--fir-global-border-color-focus);
     }
 }
-.fir-input-text__root {
+.fir-input__root {
     width: 100%;
     color: inherit;
     box-sizing: border-box;
-    border: var(--fir-input-text-border);
-    padding: var(--fir-input-text-padding);
-    font-size: var(--fir-input-text-font-size);
+    border: var(--fir-input-border);
+    padding: var(--fir-input-padding);
+    font-size: var(--fir-input-font-size);
     transition: var(--fir-global-duration);
     border-radius: var(--fir-global-border-radius);
     padding-right: 32px;
 }
-.fir-input-text__root::placeholder {
-    font-size: var(--fir-input-text-ph-font-size);
+.fir-input__root::placeholder {
+    font-size: var(--fir-input-ph-font-size);
 }
-.fir-input-text__root:hover {
-    border: var(--fir-input-text-border-hover);
+.fir-input__root:hover {
+    border: var(--fir-input-border-hover);
 }
-.fir-input-text__root:disabled {
-    border: var(--fir-input-text-border-disabled);
+.fir-input__root:disabled {
+    border: var(--fir-input-border-disabled);
 }
-.fir-input-text__root:focus-visible {
-    border: var(--fir-input-text-border-focus);
+.fir-input__root:focus-visible {
+    border: var(--fir-input-border-focus);
     outline: none;
 }
-.fir-input-text__root.fir-input-text__root_error {
-    border: var(--fir-input-text-border-error);
+.fir-input__root.fir-input-password__root_error {
+    border: var(--fir-input-password-border-error);
 }
-.fir-input-text__error {
+.fir-input__error {
     margin-left: 4px;
     color: var(--fir-global-text-error-color);
-    font-size: var(--fir-input-text-error-font-size);
+    font-size: var(--fir-input-error-font-size);
 }
 </style>
