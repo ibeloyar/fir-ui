@@ -122,6 +122,17 @@
     --fir-select-active-item-bg-color: var(--fir-c-primary-lighter-10);
     --fir-select-options-font-size: 14px;
 
+    /* Switch */
+    --fir-switch-color: var(--fir-c-gray-light-1);
+    --fir-switch-color-checked: var(--fir-c-primary);
+    --fir-switch-color-disabled: var(--fir-c-gray-light-3);
+    --fir-switch-bg-color: var(--fir-global-bg-color);
+    --fir-switch-border-color: var(--fir-global-border-color);
+    --fir-switch-border-focus-color: var(--fir-c-primary);
+    --fir-switch-border-hover-color: var(--fir-global-border-color-hover);
+    --fir-switch-border-disabled-color: var(--fir-global-border-color-disabled);
+    --fir-switch-label-disabled-color: var(--fir-global-text-disabled-color);
+    
     /* Tooltip */
     --fir-tooltip-max-width: 300px;
     --fir-tooltip-font-size: var(--fir-global-font-size-small);

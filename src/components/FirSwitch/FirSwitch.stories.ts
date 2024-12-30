@@ -28,6 +28,7 @@ export const Default: Story = {
     args: {
         value: true,
         'onUpdate:value': fn(),
+        label: 'Switch'
     },
 };
 
