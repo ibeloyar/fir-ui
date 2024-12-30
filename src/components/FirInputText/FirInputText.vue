@@ -3,6 +3,7 @@ import type { FirInputTextProps } from './FirInputText.types';
 
 const props = withDefaults(defineProps<FirInputTextProps>(), {
     error: '',
+    clean: false,
 });
 
 const model = defineModel('value');
@@ -13,7 +14,7 @@ const model = defineModel('value');
         'fir-input__wrapper': true,
         'fir-input__disabled': $attrs.disabled,
     }">
-        <span v-if="props.label" 
+        <span v-if="props.label && !clean" 
               :class="{
                   'fir-input__label': true,
                   'fir-input__label_error': props.error,
@@ -29,7 +30,7 @@ const model = defineModel('value');
             v-bind="$attrs"
             type="text"
         />
-        <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
+        <span v-if="props.error && !clean" class="fir-input__error">{{ props.error }}</span>
     </label>
 </template>
 

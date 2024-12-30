@@ -17,12 +17,13 @@ const onOpenList = () => {
     isListOpen.value = true;
 };
 
+const emit = defineEmits(['update:value']);
+
 const onSelectItem = (e) => {
-    console.log(e.target.textContent);
+    emit('update:value', e.target.textContent);
     isListOpen.value = false;
 };
 
-// const model = defineModel('value');
 </script>
 
 
@@ -35,12 +36,25 @@ const onSelectItem = (e) => {
               :class="{
                   'fir-select__label': true,
                   'fir-select__label_error': props.error,
-              }">
+              }"
+        >
             {{ props.label }}
         </span>
-        <FirPopper type="click" position="auto" full-width :is-open="isListOpen" @open-list="onOpenList">
+        <FirPopper 
+            type="click" 
+            position="auto" 
+            full-width 
+            :is-open="isListOpen" 
+            @open-list="onOpenList"
+        >
             <template v-slot:ancor>    
-                <FirInputText ref='input-ref' readonly :value="value"/>
+                <FirInputText 
+                    clean
+                    ref='input-ref'
+                    readonly :value="value"
+                    :placeholder="props.placeholder"
+                    :error="!isListOpen && props.error"
+                />
             </template>
             <template v-slot:content>
                 <ul class="fir-select__list" v-if="isListOpen">
@@ -56,7 +70,7 @@ const onSelectItem = (e) => {
                 </ul>
             </template>
         </FirPopper>
-        <span v-if="props.error" class="fir-select__error">{{ props.error }}</span>
+        <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
     </label>
 </template>
 
@@ -87,7 +101,6 @@ const onSelectItem = (e) => {
     min-width: 80px;
     margin: 0;
     padding: 8px 4px;
-    margin: 4px 0;
     width: 100%;
     box-sizing: border-box;
 }
