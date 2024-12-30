@@ -21,7 +21,8 @@
     --fir-c-primary: #42b883;
     --fir-c-primary-light: #42d392;
     --fir-c-primary-lighter: #35eb9a;
-    --fir-c-primary-lighter-1: #a2ffd5;
+    --fir-c-primary-lighter-50: #a2ffd5;
+    --fir-c-primary-lighter-10: #caf8e4;
     --fir-c-primary-dark: #33a06f;
     --fir-c-primary-darker: #155f3e;
     --fir-c-red: #C62828;
@@ -110,6 +111,12 @@
     --fir-input-error-font-size : var(--fir-global-font-size-small);
     --fir-input-ph-font-size : 13px;
 
+    /* Link */
+    --fir-link-color: var(--fir-c-primary);
+    --fir-link-active-color: var(--fir-c-primary-dark);
+    --fir-link-visited-color: var(--fir-c-primary-darker);
+    --fir-link-hover-color: var(--fir-c-primary-light);
+
     /* Modal */
     --fir-modal-bg-color: var(--fir-c-white);
     --fir-modal-padding: 24px;
@@ -118,7 +125,20 @@
 
     /* Select */
     --fir-select-bg-color: var(--fir-c-white);
+    --fir-select-active-item-bg-color: var(--fir-c-primary-lighter-10);
+    --fir-select-options-font-size: 14px;
 
+    /* Switch */
+    --fir-switch-color: var(--fir-c-gray-light-1);
+    --fir-switch-color-checked: var(--fir-c-primary);
+    --fir-switch-color-disabled: var(--fir-c-gray-light-3);
+    --fir-switch-bg-color: var(--fir-global-bg-color);
+    --fir-switch-border-color: var(--fir-global-border-color);
+    --fir-switch-border-focus-color: var(--fir-c-primary);
+    --fir-switch-border-hover-color: var(--fir-global-border-color-hover);
+    --fir-switch-border-disabled-color: var(--fir-global-border-color-disabled);
+    --fir-switch-label-disabled-color: var(--fir-global-text-disabled-color);
+    
     /* Tooltip */
     --fir-tooltip-max-width: 300px;
     --fir-tooltip-font-size: var(--fir-global-font-size-small);

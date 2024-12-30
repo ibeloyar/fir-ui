@@ -16,7 +16,7 @@ const emit = defineEmits(['click']);
             `fir-button__${props.view}`,
             `fir-button__${props.size}`
         ]" 
-        @:click="emit('click', $event)"
+        @click="emit('click', $event)"
     >
         <slot></slot>
     </button>
