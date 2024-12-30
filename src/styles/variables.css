@@ -111,6 +111,12 @@
     --fir-input-error-font-size : var(--fir-global-font-size-small);
     --fir-input-ph-font-size : 13px;
 
+    /* Link */
+    --fir-link-color: var(--fir-c-primary);
+    --fir-link-active-color: var(--fir-c-primary-dark);
+    --fir-link-visited-color: var(--fir-c-primary-darker);
+    --fir-link-hover-color: var(--fir-c-primary-light);
+
     /* Modal */
     --fir-modal-bg-color: var(--fir-c-white);
     --fir-modal-padding: 24px;
