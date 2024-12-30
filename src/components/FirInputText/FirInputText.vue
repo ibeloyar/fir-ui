@@ -25,8 +25,8 @@ const model = defineModel('value');
                 'fir-input__root': true,
                 'fir-input__root_error': !!props.error,
             }"
-            v-bind="$attrs"
             v-model="model"
+            v-bind="$attrs"
             type="text"
         />
         <span v-if="props.error" class="fir-input__error">{{ props.error }}</span>
@@ -61,6 +61,9 @@ const model = defineModel('value');
     font-size: var(--fir-input-font-size);
     transition: var(--fir-global-duration);
     border-radius: var(--fir-global-border-radius);
+}
+.fir-input__root:read-only {
+    cursor: default;
 }
 .fir-input__root::placeholder {
     font-size: var(--fir-input-ph-font-size);

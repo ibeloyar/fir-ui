@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, useTemplateRef } from 'vue';
+import { onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 import type { FirPopperProps } from './FirPopper.types';
 
@@ -12,9 +12,16 @@ const wrapper = useTemplateRef('wrapper-ref');
 const props = withDefaults(defineProps<FirPopperProps>(), {
     type: 'default',
     position: 'auto',
+    fullWidth: false,
+    isOpen: false,
 });
 
-const isOpen = ref(false);
+const emit = defineEmits(['open-list']);
+
+const isOpen = ref(props.isOpen);
+watch(props, () => {
+    isOpen.value = props.isOpen;
+});
 
 // focus handle
 const onAncorFocusIn = () => {
@@ -69,6 +76,7 @@ const onClick = () => {
     if (props.type === 'default') return;
     if (!isOpen.value) {
         isOpen.value = true;
+        emit('open-list');
         renderContent();
     } else {
         isOpen.value = false;
@@ -91,6 +99,10 @@ const renderContent = () => {
     if (ancor.value && content.value) {
         const rectAncor = ancor.value.getBoundingClientRect();
         const rectContent = content.value.getBoundingClientRect();
+
+        if (props.fullWidth) {
+            content.value.style.width = ancor.value.clientWidth + 'px';
+        }
 
         let xOffset = 0;
         let yOffset = 0;
@@ -197,7 +209,7 @@ onBeforeUnmount(() => {
         <div 
             tabindex="0"
             ref="ancor-ref"
-            class="fir-popper__ancor"
+            :class="{ 'fir-popper__ancor': true, 'fir-popper__ancor_full-width': props.fullWidth }"
             @click="onClick"
             @focus="onAncorFocusIn"
             @focusout="onAncorFocusOut"
@@ -226,6 +238,13 @@ onBeforeUnmount(() => {
     cursor: default;
     display: inline-block;
     margin: 0;
+    border: 1px solid transparent;
+}
+.fir-popper__ancor:focus-visible {
+    outline: none;
+}
+.fir-popper__ancor.fir-popper__ancor_full-width {
+    width: 100%;
 }
 .fir-popper__content {
     position: absolute;

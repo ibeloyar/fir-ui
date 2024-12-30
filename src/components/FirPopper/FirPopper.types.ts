@@ -6,4 +6,7 @@ export type PopperPosition =
 export interface FirPopperProps {
     type: 'default' | 'click';
     position?: PopperPosition;
+    fullWidth?: boolean;
+    isOpen?: boolean;
+    onOpenList?: () => void;
 }

@@ -21,7 +21,8 @@
     --fir-c-primary: #42b883;
     --fir-c-primary-light: #42d392;
     --fir-c-primary-lighter: #35eb9a;
-    --fir-c-primary-lighter-1: #a2ffd5;
+    --fir-c-primary-lighter-50: #a2ffd5;
+    --fir-c-primary-lighter-10: #caf8e4;
     --fir-c-primary-dark: #33a06f;
     --fir-c-primary-darker: #155f3e;
     --fir-c-red: #C62828;
@@ -118,6 +119,8 @@
 
     /* Select */
     --fir-select-bg-color: var(--fir-c-white);
+    --fir-select-active-item-bg-color: var(--fir-c-primary-lighter-10);
+    --fir-select-options-font-size: 14px;
 
     /* Tooltip */
     --fir-tooltip-max-width: 300px;
