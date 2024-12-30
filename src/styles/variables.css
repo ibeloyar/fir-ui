@@ -98,7 +98,7 @@
     --fir-icon-button-bg-color: transparent;
     --fir-icon-button-bg-color-hover: var(--fir-c-transparent-light);
 
-    /* Input */
+    /* Input, Textarea */
     --fir-input-font-size: var(--fir-global-font-size-medium);
     --fir-input-label-font-size: var(--fir-global-font-size-small);
     --fir-input-padding: 4px 8px;

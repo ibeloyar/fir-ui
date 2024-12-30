@@ -20,7 +20,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 - [x] Popper
 - [ ] Select
 - [ ] Switch
-- [ ] TextArea
+- [x] TextArea
 
 **Env:**
 - [x] Colors
