@@ -1,0 +1,1 @@
+export const WrapperModalDecorator = () => ({ template: '<div style="height: 300px">Parent content<story /></div>' });
