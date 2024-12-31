@@ -73,7 +73,7 @@
     "branches": [
       "main"
     ],
-    "repositoryUrl": "git@github.com:B-Dmitriy/fir-ui.git",
+    "repositoryUrl": "git@github.com:ibeloyar/fir-ui.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
