@@ -26,7 +26,7 @@ A simple set of components for prototypes and small own projects on Vue 3.
 **Env:**
 - [x] Colors
 - [x] Font
-- [ ] Imports
+- [x] Imports
 - [ ] ESLint
 - [ ] Pipeline for dev branch and main/dev branch settings in repo 
 - [ ] git hooks Husky
